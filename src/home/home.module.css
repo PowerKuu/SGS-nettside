@@ -1,0 +1,89 @@
+.container {
+    height: 100vh;
+    width: 65%;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    padding-top: 17em;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 40px;
+}
+
+.mainheading {
+    font-size: 120px;
+    margin-right: 0em;
+}
+
+.subheading {
+    font-size: 24px;
+}
+
+.headingseperator {
+    height: 4px;
+    width: auto;
+    background-color: black;
+    margin-top: -0.3em;
+    border-radius: 20px;
+}
+
+.contact {
+    transition: 0.2s;
+    text-align: center;    
+    text-justify: center;
+
+    background-color: #2411FF;
+    padding-top: 0.45em;
+    padding-bottom: 0.45em;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 2px solid #2411FF;
+    margin-right: 1em;
+}
+
+
+.contact:hover {
+    cursor: pointer;
+    box-shadow: 0 0 11px #2411FF; 
+}
+
+.aboutus {
+    transition: 0.2s;
+    text-align: center;    
+    text-justify: center;
+
+    padding-top: 0.45em;
+    padding-bottom: 0.45em;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    color: black;
+    font-size: 20px;
+    border-radius: 20px;  
+
+    border: 2px solid black;
+}
+
+.aboutus:hover {
+    cursor: pointer;
+    box-shadow: 0 0 11px black; 
+}
+
+.topheading {
+    margin-bottom: 0.2em;
+}
+
+.topbuttons {
+    margin-bottom: 0.3em;
+}
+
+.topinfo {
+    font-size: 17px;
+    color: #272727;
+}

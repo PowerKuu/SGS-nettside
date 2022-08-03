@@ -1,0 +1,32 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    display: table;
+}   
+
+body {
+    overflow: hidden;
+    background-color: #ffffff;
+
+
+    width: 100%;
+    display: table-cell;
+    overflow-y: scroll;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+
+    font-family: Questrial;
+    font-weight: regular;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.02em;
+}
