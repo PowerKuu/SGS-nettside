@@ -1,18 +1,14 @@
 import {$} from "mantle.web/core"
-import navbar from "./navbar"
-import footer from "./footer"
 
 import css from "./home.module.css"
 import { norway } from "./lang"
 
 export default function home() {
     return $("div", [
-        navbar(),
         top(),
         cards(),
         info(),
         form(),
-        footer()
     ], {class: css.container})
 }
 

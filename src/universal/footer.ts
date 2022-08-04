@@ -12,7 +12,7 @@ export default function footer() {
             ...items
         ], {class: css.footerlist})
     }
-        
+
     return $("div", [
         $("div", [
             footerlist("SIDER", [

@@ -1,6 +1,16 @@
-.navbar {
+.navbarcontainer {
     position: fixed;
     width: inherit;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 3px 2px -2px #000000;
+}
+
+.navbar {
     top: 0;
     padding-top: 0.3rem;
     
@@ -8,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-    /*box-shadow: 0 3px 2px -2px #000000;*/
+    width: 70%;
 }
 
 .left {
