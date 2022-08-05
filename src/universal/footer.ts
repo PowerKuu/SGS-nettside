@@ -1,9 +1,13 @@
 import {$} from "mantle.web/core"
+import { mail } from "../home/home"
 import css from "./footer.module.css"
+import { ScrollTo } from "./manager"
 
 export default function footer() {
-    function footeritem(text:string) {
-        return $("li", [text], {class: css.footerlistitem})
+    function footeritem(text:string, id:string|undefined = undefined, path:string|undefined = undefined) {
+        const li = $("li", [text], {class: css.footerlistitem})
+        if (id && path) li.element.onclick = () => ScrollTo(id, path)
+        return li
     }
 
     function footerlist(head:string, items:Array<any>) {
@@ -17,12 +21,12 @@ export default function footer() {
         $("div", [
             $("div", [
                 footerlist("SIDER", [
-                    footeritem("HJEM"), 
-                    footeritem("OM-OSS"),
-                    footeritem("KONTANK"),
+                    footeritem("HJEM", "top", "/home"), 
+                    footeritem("OM-OSS", "info", "/home/info"),
+                    footeritem("KONTANK", "contact", "/home/contact"),
                 ]),
                 footerlist("KONTAKT INFO", [
-                    footeritem("Facebook: wdwjdwdnwj"),
+                    footeritem(mail),
                 ]),
                 footerlist("ANNEN INFO", [
                     footeritem("© 2022 SGS"),

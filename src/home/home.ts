@@ -1,14 +1,22 @@
 import {$, $singel} from "mantle.web/core"
+import {$router} from "mantle.web/router"
 
 import css from "./home.module.css"
-import { norway } from "./lang"
+import {norway} from "./lang"
+import {ScrollTo} from "../universal/manager"
 
-export default function home() {
+export const mail = "file@gmail.com"
+
+export default function home(ElementKey:string|undefined = undefined) {
+    $router.on("load", () => {
+        if (ElementKey) ScrollTo(ElementKey)
+    })
+
     return $("div", [
         top(),
         cards(),
         info(),
-        form(),
+        form()
     ], {class: css.container})
 }
 
@@ -21,8 +29,8 @@ function top() {
                 $("div", [], {class: css.headingseperator}),
             ], {class: css.topheading}),
             $("div", [
-                $("span", ["KONTAKT"], {class: css.contact}),
-                $("span", ["OM OSS"], {class: css.aboutus}),
+                $("span", ["KONTAKT"], {class: css.contact, onclick: () => ScrollTo("contact", "/home/contact")}),
+                $("span", ["OM OSS"], {class: css.aboutus, onclick: () => ScrollTo("info", "/home/info")}),
             ], {class: css.topbuttons}),
             $("div", [
                 $("span", [norway.info], {class: css.topinfo}),
@@ -31,7 +39,7 @@ function top() {
         $("div", [  
             $("img", [], {src: "/logo.svg", class: css.logo}),
         ], {class: css.topright}),
-    ], {class: css.top})
+    ], {class: css.top, id: "top"})
 }
 
 function cards() {
@@ -46,10 +54,10 @@ function cards() {
     }
 
     return $("div", [
-        card("REKLAME", norway.ad, "./cards/ad.svg"),
-        card("NETTSIDE", norway.website, "./cards/website.svg"),
-        card("SOSIALE-MEDIER", norway.social, "./cards/social.svg"),
-    ], {class: css.cards})
+        card("REKLAME", norway.ad, "/cards/ad.svg"),
+        card("NETTSIDE", norway.website, "/cards/website.svg"),
+        card("SOSIALE-MEDIER", norway.social, "/cards/social.svg"),
+    ], {class: css.cards, id: "cards"})
 }
 
 function info() {
@@ -59,10 +67,10 @@ function info() {
             $("div", [norway.aboutus], {class: css.infotext}),
         ], {class: css.infocard}),
         $("div", [
-            $("div", ["HOVRFOR OSS"], {class: css.infohead}),
+            $("div", ["OM VÅRE TJENESTER"], {class: css.infohead}),
             $("div", [norway.whyus], {class: css.infotext}),
         ], {class: css.infocard}),
-    ], {class: css.info})
+    ], {class: css.info, id: "info"})
 }   
 
 function form() {
@@ -91,11 +99,15 @@ function form() {
     }
 
     const form = $("form", [
-        forminput("Navn", "name"),
-        forminput("Telefon (optional)", "phone", false, true),
-        forminput("E-post", "email"),
-        forminput("Bedrift navn (optional)", "company"),
-        forminput("Medling", "message", true),
+        $("div", [
+            forminput("Navn", "name"),
+            forminput("Telefon (valgfritt)", "phone", false, true),
+        ], {class: css.forminputrow}),
+        $("div", [
+            forminput("E-post", "email"),
+            forminput("Bedriftsnavn (valgfritt)", "company"),
+        ], {class: css.forminputrow}),
+        forminput("Melding", "message", true),
 
         $("input", [
             $("p", ["SEND"])
@@ -104,6 +116,7 @@ function form() {
 
     form.element.onsubmit = async (e) => {
         e.preventDefault()
+        SubmitTextSingel("Sender...", 0)
         const SubmitData = new FormData(form.element)
         const RequestBody = {
             name: SubmitData.get("name"),
@@ -149,10 +162,10 @@ function form() {
             $("p", ["KONTANKT OSS OGSÅ PÅ"], {class: css.forminfoheader}),
             $("div", [
                 $("div", [
-                    $("img", [], {src: "./icons/gmail.svg", class: css.formicon}),
-                    $("span", ["fill@gmail.com"], {class: css.formicontext})
+                    $("img", [], {src: "/icons/gmail.svg", class: css.formicon}),
+                    $("span", [mail], {class: css.formicontext})
                 ], {class: css.formiconwrap}),
             ], {class: css.forminfoicons})
         ], {class: css.forminfo}),
-    ], {class: css.formwrap})
+    ], {class: css.formwrap, id: "contact"})
 }

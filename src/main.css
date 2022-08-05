@@ -27,26 +27,26 @@ body {
 }
 
 
-@media (max-width: 37rem) {
+@media (max-width: 1315px) {
+    html {
+        font-size: 15.5px;
+    }
+}
+
+@media (max-width: 1015px) {
     html {
         font-size: 15px;
     }
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 570px) {
     html {
-        font-size: 12px;
+        font-size: 13px;
     }
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 500px) {
     html {
         font-size: 11px;
-    }
-}
-
-@media (max-width: 19rem) {
-    html {
-        font-size: 7px;
     }
 }

@@ -1,6 +1,5 @@
 
 .footerwrap {
-    margin-top: 5rem;
     background-color: #2411ff;
     color: white;
     width: 100%;
@@ -15,7 +14,7 @@
     justify-content: space-between;
     padding-top: 1rem;
 
-    width: 70%;
+    width: 80%;
 }
 
 .logo {

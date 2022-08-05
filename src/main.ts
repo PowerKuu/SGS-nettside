@@ -5,12 +5,19 @@ import "./main.css"
 import navbar from "./universal/navbar"
 import footer from "./universal/footer"
 
-$router.add("/", () => {
-    return [
+function HomePage({scroll}:any){
+    const load = [
         navbar(),
-        home(),
+        home(scroll),
         footer(),
     ]
-})
+
+    document.body.style.opacity = "100%"
+
+    return load
+}
+
+$router.add("/home/", HomePage)
+$router.add("/home/[scroll]", HomePage)
 
 $router.update()
