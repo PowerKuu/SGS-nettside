@@ -4,18 +4,18 @@ html, body {
 }
 
 html {
-    background: red;
+    background-color: #ffffff;
 
     font-size: 16px;
     line-height: 1.1rem;
 }   
 
 body {
-    background-color: #ffffff;
     overflow-y: scroll;
 }
 
 #app {
+    max-height: 0;
     display: flex;
     flex-direction: column;
     top: 0;
@@ -24,4 +24,29 @@ body {
     font-family: Questrial;
     font-weight: regular;
     text-rendering: optimizeLegibility;
+}
+
+
+@media (max-width: 37rem) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 30rem) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 25rem) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 19rem) {
+    html {
+        font-size: 7px;
+    }
 }

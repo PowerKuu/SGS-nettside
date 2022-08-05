@@ -5,4 +5,6 @@ export const norway = {
     social: `Det er over 4,7 milliarder sosiale mediebrukere rundt om i verden, altså 59% av verdens befolkning. Dette gjør det viktig for bedrifter å være representert med egne brukere for å denne store gruppen. Vi tilbyr å drive din bedrifts bruker for å gro den og maksimere dens effektivitet.`,
     aboutus: `Fill`,
     whyus: `Fill`,
+    giveusinfo: `Fill`,
+    dontknow: `Fill`,
 }

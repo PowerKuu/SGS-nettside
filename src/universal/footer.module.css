@@ -1,18 +1,21 @@
 
-.footer {
+.footerwrap {
+    margin-top: 5rem;
     background-color: #2411ff;
     color: white;
-    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
     padding-top: 1rem;
-    padding-bottom: 2rem;
 
-    position: static;
-    bottom: 0;
-    width: 100%;
+    width: 70%;
 }
 
 .logo {
@@ -53,4 +56,17 @@
 
 .footerlistitem:hover {
     cursor: pointer;
+}
+
+@media (max-width: 70rem) {
+    .footerright {
+        display: none;
+    }
+}
+
+
+@media (max-width: 37rem) {
+    .footerleft {
+        flex-direction: column;
+    }
 }
