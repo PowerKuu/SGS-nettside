@@ -16,11 +16,15 @@ function HomePage({scroll}:any){
     return load
 }
 
-$router.add("/home/", HomePage)
-$router.add("/home/[scroll]", HomePage)
+
 $router.add("/", () => {
-    $router.update("/home/", "", false)
-    return HomePage({})
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(String(prop)),
+    })
+
+    return HomePage({
+        scoll: params["page"]
+    })
 })
 
 $router.update()

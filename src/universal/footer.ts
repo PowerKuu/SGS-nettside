@@ -4,9 +4,9 @@ import css from "./footer.module.css"
 import { ScrollTo } from "./manager"
 
 export default function footer() {
-    function footeritem(text:string, id:string|undefined = undefined, path:string|undefined = undefined) {
+    function footeritem(text:string, id:string|undefined = undefined, quary:string|undefined = undefined) {
         const li = $("li", [text], {class: css.footerlistitem})
-        if (id && path) li.element.onclick = () => ScrollTo(id, path)
+        if (id) li.element.onclick = () => ScrollTo(id, quary)
         return li
     }
 
@@ -21,9 +21,9 @@ export default function footer() {
         $("div", [
             $("div", [
                 footerlist("SIDER", [
-                    footeritem("HJEM", "top", "/home"), 
-                    footeritem("OM-OSS", "info", "/home/info"),
-                    footeritem("KONTANK", "contact", "/home/contact"),
+                    footeritem("HJEM", "top"), 
+                    footeritem("OM-OSS", "info", "info"),
+                    footeritem("KONTANK", "contact", "contact"),
                 ]),
                 footerlist("KONTAKT INFO", [
                     footeritem(mail),

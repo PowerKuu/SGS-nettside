@@ -29,8 +29,8 @@ function top() {
                 $("div", [], {class: css.headingseperator}),
             ], {class: css.topheading}),
             $("div", [
-                $("span", ["KONTAKT"], {class: css.contact, onclick: () => ScrollTo("contact", "/home/contact")}),
-                $("span", ["OM OSS"], {class: css.aboutus, onclick: () => ScrollTo("info", "/home/info")}),
+                $("span", ["KONTAKT"], {class: css.contact, onclick: () => ScrollTo("contact", "contact")}),
+                $("span", ["OM OSS"], {class: css.aboutus, onclick: () => ScrollTo("info", "info")}),
             ], {class: css.topbuttons}),
             $("div", [norway.info], {class: css.topinfo}),
         ], {class: css.topleft}),
