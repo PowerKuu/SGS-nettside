@@ -21,9 +21,9 @@ $router.add("/", () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(String(prop)),
     })
-
+    
     return HomePage({
-        scoll: params["page"]
+        scroll: params["page"]
     })
 })
 
