@@ -122,7 +122,7 @@ function form() {
             name: SubmitData.get("name"),
             phone: SubmitData.get("phone"),
             email: SubmitData.get("email"),
-            company: SubmitData.get("company"),
+            companyname: SubmitData.get("company"),
             message: SubmitData.get("message"),
         }
 
