@@ -78,10 +78,15 @@
 .topinfo {
     font-size: 1.2rem;
     color: #272727;
+    width: 30rem;
 }
 
 .topbuttons {
     margin-bottom: 2rem;
+}
+
+.topheading {
+    width: 22.2rem;
 }
 
 

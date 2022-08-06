@@ -5,7 +5,7 @@ import css from "./home.module.css"
 import {norway} from "./lang"
 import {ScrollTo} from "../universal/manager"
 
-export const mail = "file@gmail.com"
+export const mail = "sgs.markedsforing@gmail.com"
 
 export default function home(ElementKey:string|undefined = undefined) {
     $router.on("load", () => {
@@ -32,9 +32,7 @@ function top() {
                 $("span", ["KONTAKT"], {class: css.contact, onclick: () => ScrollTo("contact", "/home/contact")}),
                 $("span", ["OM OSS"], {class: css.aboutus, onclick: () => ScrollTo("info", "/home/info")}),
             ], {class: css.topbuttons}),
-            $("div", [
-                $("span", [norway.info], {class: css.topinfo}),
-            ]),
+            $("div", [norway.info], {class: css.topinfo}),
         ], {class: css.topleft}),
         $("div", [  
             $("img", [], {src: "/logo.svg", class: css.logo}),
@@ -74,6 +72,8 @@ function info() {
 }   
 
 function form() {
+    const formurl = "https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-194ec3e4-9ac3-40f7-986b-b6b7ab5cc337/cloud/contact"
+
     const SubmitText = (text:string, state = 0) => {
         const fail = state == 0 ? "" :  state == 1 ? css.submittextsuccess : css.submittextfail
         return $("p", [text], {class: [css.submittext, fail]})
@@ -133,19 +133,28 @@ function form() {
             return
         }
 
-        const data = await fetch("/api/contact", {
+        const data = await fetch(formurl, {
             method: "POST",
-            body: JSON.stringify(RequestBody)
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(RequestBody),
         })
 
-        if (data.status === 200) {
-            SubmitTextSingel("Sendt! Du vill høre tilbake fra oss straks på mail eller telefon.", 1)
-            form.element.reset()
-            return
-        } else {
-            SubmitTextSingel("En ukjent feil oppsto ved sending. Gjerne kontakt oss gjennom mail.", -1)
-            return
+        const unknown = "En ukjent feil oppsto ved sending. Gjerne kontakt oss gjennom mail."
+        const json = await data.json()
+
+        if (json.sent === true) SubmitTextSingel("Sendt! Du vill høre tilbake fra oss straks på mail eller telefon.", 1)
+        else if(json.error === 1) {
+            SubmitTextSingel("Du må fylle ut alle de nødvendige feltene!", -1)
+        } else if (json.error === 2) {
+            SubmitTextSingel("E-postadressen du oppga er ikke gyldig!", -1)
+        } else if (json.error === 3) {
+            SubmitTextSingel(unknown, -1)
         }
+        form.element.reset()
+        return
+
     }
 
     return $("div", [
@@ -157,13 +166,16 @@ function form() {
         $("div", [
             $("p", ["GI OSS INFO"], {class: css.forminfoheader}),
             $("p", [norway.giveusinfo], {class: css.forminfotext}),
-            $("p", ["VET DU IKKE HVA DU HVIL"], {class: css.forminfoheader}),
+            $("p", ["USIKKER"], {class: css.forminfoheader}),
             $("p", [norway.dontknow], {class: css.forminfotext}),
             $("p", ["KONTANKT OSS OGSÅ PÅ"], {class: css.forminfoheader}),
             $("div", [
                 $("div", [
                     $("img", [], {src: "/icons/gmail.svg", class: css.formicon}),
                     $("span", [mail], {class: css.formicontext})
+                ], {class: css.formiconwrap}),
+                $("div", [
+                    $("span", ["Tlf     +47 91331705"], {class: css.formicontext}),
                 ], {class: css.formiconwrap}),
             ], {class: css.forminfoicons})
         ], {class: css.forminfo}),

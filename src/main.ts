@@ -13,11 +13,14 @@ function HomePage({scroll}:any){
     ]
 
     document.body.style.opacity = "100%"
-
     return load
 }
 
 $router.add("/home/", HomePage)
 $router.add("/home/[scroll]", HomePage)
+$router.add("/", () => {
+    $router.update("/home/", "", false)
+    return HomePage({})
+})
 
 $router.update()

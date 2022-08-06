@@ -27,6 +27,7 @@ export default function footer() {
                 ]),
                 footerlist("KONTAKT INFO", [
                     footeritem(mail),
+                    footeritem("+47 91331705"),
                 ]),
                 footerlist("ANNEN INFO", [
                     footeritem("© 2022 SGS"),
