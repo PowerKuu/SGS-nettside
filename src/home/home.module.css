@@ -186,6 +186,7 @@
 .infotext {
     font-size: 1rem;
     color: #272727;
+    white-space: pre-wrap;
 }
 
 /* Contact */
