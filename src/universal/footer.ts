@@ -23,7 +23,7 @@ export default function footer() {
                 footerlist("SIDER", [
                     footeritem("HJEM", "top"), 
                     footeritem("OM-OSS", "info", "info"),
-                    footeritem("KONTANK", "contact", "contact"),
+                    footeritem("KONTAKT", "contact", "contact"),
                 ]),
                 footerlist("KONTAKT INFO", [
                     footeritem(mail),
