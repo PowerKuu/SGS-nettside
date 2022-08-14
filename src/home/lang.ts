@@ -1,5 +1,5 @@
 export const norway = {
-    info: `Vi hjelper bedrifter med å med markedsføring på nett. Om det er reklame, responsiv nettside eller sosiale-medier kan vi hjelpe deg.`,
+    info: `Vi hjelper bedrifter med å markedsføring på nett. Om det er reklame, responsiv nettside eller sosiale-medier kan vi hjelpe deg.`,
     ad: `Digital markedsføring gir deg en unik mulighet til å lage målrettet innhold på nett, akkurat der kundene dine er. For oss er hvert prosjekt unikt. Vi skreddersyr pakker for din bedrift, og gjør dine produkter og tjenester mer synlig.`,
     website: `Når man skal lage en nettside er det tre fagområder man må kunne: design, programmering på serversiden og programmering på klientsiden. I disse hovedområdene kreves det ekspertise for å få til en nettside med sterk visuell merkevare. Dette er SGS har lang erfaring med.`,
     social: `Det er over 4,7 milliarder sosiale mediebrukere rundt om i verden, altså 59% av verdens befolkning. Dette gjør det viktig for bedrifter å være representert med egne brukere for å denne store gruppen. Vi tilbyr å drive din bedrifts bruker for å gro den og maksimere dens effektivitet.`,
