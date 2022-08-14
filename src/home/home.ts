@@ -12,6 +12,7 @@ export default function home(ElementKey:string|undefined = undefined) {
         if (ElementKey) ScrollTo(ElementKey)
     })
 
+    
     return $("div", [
         top(),
         cards(),
