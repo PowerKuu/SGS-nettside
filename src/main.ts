@@ -1,8 +1,6 @@
 import {$router} from "mantle.web/router"
 import "./main.css"
 
-import { $ } from "mantle.web/core"
-
 async function HomePage({scroll}:any){
     const navbar = await import("./universal/navbar")
     const home = await import("./home/home")
@@ -18,18 +16,7 @@ async function HomePage({scroll}:any){
     return load
 }
 
-
-$router.add("/", () => {
-    const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(String(prop)),
-    })
-    
-    return HomePage({
-        scroll: params["page"]
-    })
-})
-
-$router.add("/sMQVch", () => {
+function ref() {
     window.eval(`
     (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
     ;r.type="text/javascript"
@@ -58,10 +45,21 @@ $router.add("/sMQVch", () => {
     amplitude.getInstance().init("fc9a7209b5ba580adf0617fd4ae57cba")
     amplitude.getInstance().logEvent('En bruker trykket på sgs linken sMQVch')
     `)
-    
-    window.location.href = "/"
+}
 
-    return $("span")
+$router.add("/", () => {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(String(prop)),
+    })
+
+    if (params["ref"] == "sMQVch") {
+        ref()
+    }
+    
+    return HomePage({
+        scroll: params["page"]
+    })
 })
+
 
 $router.update()

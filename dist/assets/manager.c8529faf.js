@@ -1,1 +1,0 @@
-import{a as t}from"./index.084be52a.js";function n(l,e=void 0){const o=document.getElementById(l);!o||(o.scrollIntoView({behavior:"smooth",block:"center"}),e?t.update("/","?page="+e,!1):t.update("/","",!1))}export{n as S};
