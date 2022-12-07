@@ -12,7 +12,7 @@ function wrapper(items:JSX.Element){
         </Navbar>
 
         {items}
-
+    
 
     </>
 }
