@@ -1,17 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+:root {
+    
+    --normal-color: white;
+    --contrast-color: black;
+    --pop-color: #1066FF;
+
+    --weak-color: #C0C0C0;
+    --weaker-color: #C6C6C6;
+    --seperator-color: #F0F0F0;
+
+    --content-padding: 11vw;
+}
+
+html {
+    font-size: 20px;
+}
 
 body, html {
     margin: 0;
     padding: 0;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
 * {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    font-weight: normal;
+}
+
+span {
+    color: var(--pop-color);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+h1 {
+    font-family: 'Questrial', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
 }

@@ -1,12 +1,14 @@
 import { router } from "@klevn/solid-router" 
 import { JSX } from "solid-js/jsx-runtime"
+
+import logo from "./assets/logo.svg"
 import './index.css'
 
 import Navbar, {NavItem} from "./components/navbar"
 
 function wrapper(items:JSX.Element){
     return <>
-        <Navbar icon="">
+        <Navbar icon={logo}>
             <NavItem>Om oss</NavItem>
             <NavItem button={true}>Kontakt</NavItem>
         </Navbar>

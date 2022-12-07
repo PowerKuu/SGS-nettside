@@ -1,15 +1,38 @@
 .navbar {
     display: flex;
     position: sticky;
-    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--weaker-color);
+
+    padding: 0.7rem;
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
 }
 
 .navbar div {
+    gap: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+
+.navbar div *:hover {
+    cursor: pointer;
+}
+
+.navbar .icon {
+    width: 6rem;
+}
+
+
+.navbar .button {
+    color: var(--pop-color);
+    outline: solid var(--pop-color) 1px;
+
+    padding: 0.4rem 1rem 0.4rem 1rem;
+} 
