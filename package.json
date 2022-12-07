@@ -1,18 +1,21 @@
 {
-  "name": "sgs-nettside",
-  "private": true,
+  "name": "vite-template-solid",
   "version": "0.0.0",
-  "type": "module",
+  "description": "",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "serve": "vite preview"
   },
+  "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.6.4",
-    "vite": "^3.0.0"
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "mantle.web": "1.0.7"
+    "@klevn/solid-router": "^2.0.2",
+    "solid-js": "^1.5.1"
   }
 }
