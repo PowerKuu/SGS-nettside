@@ -1,4 +1,5 @@
 .content {
     padding: var(--content-padding);
     padding-top: 6rem;
+    padding-bottom: 4rem;
 }

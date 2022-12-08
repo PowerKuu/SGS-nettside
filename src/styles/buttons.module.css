@@ -1,0 +1,34 @@
+
+.action {
+    transition: 0.1s;
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+
+    color: white !important;
+
+    background-color: var(--pop-color);
+    outline: var(--pop-color) solid 1px;
+}
+
+.read {
+    transition: 0.1s;
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+
+    color: var(--pop-color) !important;
+    outline: var(--pop-color) solid 1px;
+}
+
+.read:hover, .action:hover {
+    cursor: pointer;
+}
+
+.action:hover {
+    background-color: var(--hover-action-color);
+}
+
+.read:hover {
+    background-color: var(--hover-read-color);
+}

@@ -1,6 +1,11 @@
 .navbar {
     display: flex;
-    position: sticky;
+    position: fixed;
+
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -28,11 +33,3 @@
 .navbar .icon {
     width: 6rem;
 }
-
-
-.navbar .button {
-    color: var(--pop-color);
-    outline: solid var(--pop-color) 1px;
-
-    padding: 0.4rem 1rem 0.4rem 1rem;
-} 

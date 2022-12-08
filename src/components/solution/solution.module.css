@@ -1,0 +1,12 @@
+.solution {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    align-items: flex-start;
+}
+
+.solution p {
+    color: var(--text-weak-color);
+    max-width: 700px;
+}

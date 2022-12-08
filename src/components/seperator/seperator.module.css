@@ -1,0 +1,8 @@
+.seperator {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: 2px;
+    width: 100%;
+
+    background-color: var(--seperator-color);
+}

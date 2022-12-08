@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 :root {
@@ -10,13 +10,20 @@
     --weaker-color: #C6C6C6;
     --seperator-color: #F0F0F0;
 
+    --hover-read-color: hsl(0, 0%, 90%);
+    --hover-action-color: hsl(218, 100%, 45%);
+
+    --text-weak-color: #161616;
+
+    --h3-span-color: #8C8C8C;
+
     --content-padding: 11vw;
+    --row-gap: 4rem;
 }
 
 html {
     font-size: 20px;
 }
-
 
 
 body, html {
@@ -34,24 +41,59 @@ body, html {
     margin: 0;
 }
 
-span {
-    color: var(--pop-color);
-}
-
 p {
     font-size: 1rem;
     font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -1.5%;
 }
 
 h1 {
     font-family: 'Questrial', sans-serif;
-    font-size: 6.5rem;
+    font-size: 5.5rem;
     font-weight: 400;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.3rem;
     font-weight: 500;
+}
+
+
+h1 span, h2 span {
+    color: var(--pop-color);
+}
+
+h3 span {
+    color: var(--h3-span-color);
+    font-size: 1rem;
+}
+
+
+input, textarea {
+    outline: none;
+    border: none;
+    border: 1px solid var(--weak-color);
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+
+    font-size: 1rem;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 400 !important;
+    resize: none; 
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+input:focus, textarea:focus {
+    border: 1px solid var(--contrast-color);
 }
 
 @media screen and (max-width: 1700px) {

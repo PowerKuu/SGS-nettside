@@ -1,0 +1,17 @@
+.solutions {
+    margin-top: -2.2rem;
+    padding-top: 0rem;
+
+    position: relative;
+    width: 100%;
+    background-color: white;
+}
+
+.solutions > div {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--row-gap);
+
+    width: 100%;
+}
