@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 :root {
-    
     --normal-color: white;
     --contrast-color: black;
     --pop-color: #1066FF;
@@ -17,6 +16,8 @@
 html {
     font-size: 20px;
 }
+
+
 
 body, html {
     margin: 0;
@@ -44,11 +45,21 @@ p {
 
 h1 {
     font-family: 'Questrial', sans-serif;
-    font-size: 5.5rem;
+    font-size: 6.5rem;
     font-weight: 400;
 }
 
 h2 {
     font-size: 2rem;
     font-weight: 500;
+}
+
+@media screen and (max-width: 1700px) {
+    :root {
+        --content-padding: 8vw;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
 }
