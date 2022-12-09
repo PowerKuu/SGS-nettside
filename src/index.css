@@ -105,3 +105,58 @@ input:focus, textarea:focus {
         font-size: 5rem;
     }
 }
+
+@media screen and (max-width: 900px) {
+    h3 span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px)  {
+    html {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+} 
+
+
+@media screen and (max-width: 480px)  {
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}   
+
+
+@media screen and (max-width: 400px)  {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}   
+
+
+@media screen and (max-width: 600px)  {
+    :root {
+        --content-padding: 5vw;
+    }
+}   
+
+@media screen and (max-width: 400px)  {
+    :root {
+        --content-padding: 4vw;
+    }
+}   

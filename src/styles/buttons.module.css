@@ -1,10 +1,16 @@
-
-.action {
+.action, .read {
     transition: 0.1s;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 0.6rem;
     padding: 0.4rem 1.2rem 0.4rem 1.2rem;
 
+
+    min-width: 5rem;
+}
+
+.action {
     color: white !important;
 
     background-color: var(--pop-color);
@@ -12,11 +18,6 @@
 }
 
 .read {
-    transition: 0.1s;
-    display: flex;
-    gap: 0.6rem;
-    padding: 0.4rem 1.2rem 0.4rem 1.2rem;
-
     color: var(--pop-color) !important;
     outline: var(--pop-color) solid 1px;
 }
@@ -31,4 +32,17 @@
 
 .read:hover {
     background-color: var(--hover-read-color);
+}
+
+@media screen and (max-width: 600px)  {
+    .action, .read {
+        padding: 0.3rem 0.8rem 0.3rem 0.8rem;
+    }
+}   
+
+
+@media screen and (max-width: 400px)  {
+    .action, .read {
+        padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+    }
 }

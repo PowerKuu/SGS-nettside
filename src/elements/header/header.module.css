@@ -86,7 +86,11 @@
     }
     
     50% {
-        bottom: 0rem;
+        bottom: -5rem;
+    }
+
+    100% {
+        bottom: -5rem;
     }
 }
 
@@ -112,9 +116,38 @@
 
     filter: blur(1px);
 
-    animation: 5s rightSlide;
+    animation: 5s rightSlide forwards;
 
     /* Remove pillar color */
     margin-right: 1px;
     width: 8rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .pillars .relative .leftPillar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .pillars .relative .rightPillar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .pillars .relative .middlePillar {
+        display: none;
+    }
+
+    .pillars {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .heading .buttons .read{
+        display: none;
+    }
 }

@@ -3,3 +3,9 @@
     padding-top: 6rem;
     padding-bottom: 4rem;
 }
+
+@media screen and (max-width: 1700px) {
+    .content {
+        padding-bottom: 6rem;
+    }
+}

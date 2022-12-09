@@ -18,11 +18,11 @@ export default () => {
                 </div>
 
                 <div class={styles.buttons}>    
-                    <p class={buttons.action}>
+                    <p class={[buttons.action, styles.action].join(" ")}>
                         Ta kontakt
                         <img src={arrowWhite} alt="" />
                     </p>
-                    <p class={buttons.read}>
+                    <p class={[buttons.read, styles.read].join(" ")}>
                         Hvorfor oss
                         <img src={arrowPop} alt="" />
                     </p>

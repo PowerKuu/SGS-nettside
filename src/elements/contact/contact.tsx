@@ -3,10 +3,29 @@ import buttons from "../../styles/buttons.module.css"
 
 import phoneIcon from "../../assets/icons/phone.svg"
 import mailIcon from "../../assets/icons/mail.svg"
+import { createEffect } from "solid-js"
 
 export default () => {
     let form:any
 
+    function formSubmit(event:any){
+      event.preventDefault()
+      const url = "https://formbold.com/s/9BWD3"
+      console.log(event)
+
+      /*
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json"
+        },
+
+        body: JSON.stringify({
+          
+        })
+      })
+      */
+    }
 
     return (
       <div class={styles.contact}>
@@ -28,7 +47,10 @@ export default () => {
             </div>
 
             <div class={styles.button}>
-              <p class={buttons.action} onclick={form.submit()}>
+              <p class={buttons.action} onclick={() => {
+                form.submit()
+                console.log(form)
+              }}>
                 Send
               </p>
             </div>

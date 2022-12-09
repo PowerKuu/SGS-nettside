@@ -5,7 +5,7 @@ import buttons from "../../styles/buttons.module.css"
 
 export default ({icon, children}:{icon:any, children:JSX.Element}) => {
     return <nav class={styles.navbar}>
-        <div>
+        <div class={styles.iconContainer}>
             <img class={styles.icon} src={icon} alt="" />
         </div>
         <div>

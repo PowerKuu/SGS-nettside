@@ -4,7 +4,7 @@ import home from "../styles/home.module.css"
 
 import Header from "../elements/header/header"
 import Solutions from "../elements/solutions/solutions"
-import Whyus from "../elements/whyus/whyus"
+import Whyus from "../elements/aboutus/aboutus"
 import Contact from "../elements/contact/contact"
 
 export default () => {

@@ -10,8 +10,12 @@ import Footer, { FooterElement } from "./components/footer/footer"
 function wrapper(items:JSX.Element){
     return <>
         <Navbar icon={sgsIcon}>
-            <NavItem>Om oss</NavItem>
-            <NavItem button={true}>Kontakt</NavItem>
+            <NavItem onclick={() => {
+                
+            }}>Hvorfor oss</NavItem>
+            <NavItem button={true} onclick={() => {
+
+            }}>Kontakt</NavItem>
         </Navbar>
 
         {items}

@@ -33,3 +33,15 @@
 .navbar .icon {
     width: 6rem;
 }
+
+@media screen and (max-width: 420px) {
+    .navbar .icon {
+        width: 5rem;
+    }
+}
+
+@media screen and (max-width: 330px) {  
+    .navbar .iconContainer {
+        display: none;
+    }
+}
