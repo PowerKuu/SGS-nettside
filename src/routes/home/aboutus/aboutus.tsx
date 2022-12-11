@@ -1,7 +1,9 @@
 import styles from "./aboutus.module.css"
-import buttons from "../../styles/buttons.module.css"
+import {ReadButton} from "../../../components/buttons/buttons"
 
-import aboutusImage from "../../assets/images/aboutus.png"
+import aboutusImage from "../../../assets/images/aboutus.png"
+
+import { whyusNav } from "../../../navigator"
 
 export default () => {
     return <div class={styles.aboutus}>
@@ -10,7 +12,7 @@ export default () => {
                 <div class={styles.text}>
                     <p> Neque porro quisquam est, qui dolorem.Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.tatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.</p>
                     <div class={styles.seperator}></div>
-                    <p class={buttons.read}>Hvorfor oss</p>
+                    <ReadButton onclick={whyusNav}>Hvorfor oss</ReadButton>
                 </div>
                 
                 <div style={{"background-image": `url(${aboutusImage})`}} class={styles.image}>

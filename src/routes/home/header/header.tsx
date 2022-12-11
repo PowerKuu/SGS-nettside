@@ -1,31 +1,40 @@
 import styles from "./header.module.css"
-import buttons from "../../styles/buttons.module.css"
+import { ActionButton, ReadButton } from "../../../components/buttons/buttons"
 
-import arrowPop from "../../assets/icons/arrow-pop.svg"
-import arrowWhite from "../../assets/icons/arrow-white.svg"
+import arrowPop from "../../../assets/icons/arrow-pop.svg"
+import arrowWhite from "../../../assets/icons/arrow-white.svg"
 
-import leftPillar from "../../assets/vectors/top-left-pillar.svg"
-import middlePillar from "../../assets/vectors/top-middle-pillar.svg"
-import rightPillar from "../../assets/vectors/top-right-right.svg"
+import leftPillar from "../../../assets/vectors/top-left-pillar.svg"
+import middlePillar from "../../../assets/vectors/top-middle-pillar.svg"
+import rightPillar from "../../../assets/vectors/top-right-right.svg"
+
+import { contactNav, whyusNav } from "../../../navigator"
+
+import Typewriter from "typewriter-effect"
+import { createEffect } from "solid-js"
 
 export default () => {
+    let test:any
+
+
     return <div class={styles.header}>
             <div class={styles.heading}>
                 <div>
-                    <h1><span>S</span>torhet</h1>
+                    <h1 ref={test}><span>S</span>torhet</h1>
                     <h1><span>G</span>jennom</h1>
                     <h1><span>S</span>amarbeid</h1>
                 </div>
 
                 <div class={styles.buttons}>    
-                    <p class={[buttons.action, styles.action].join(" ")}>
+                    <ActionButton class={styles.action} onclick={() => contactNav(true)}>
                         Ta kontakt
                         <img src={arrowWhite} alt="" />
-                    </p>
-                    <p class={[buttons.read, styles.read].join(" ")}>
+                    </ActionButton>
+
+                    <ReadButton class={styles.read} onclick={() => whyusNav()}>
                         Hvorfor oss
                         <img src={arrowPop} alt="" />
-                    </p>
+                    </ReadButton>
                 </div>
             </div>
         

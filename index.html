@@ -8,9 +8,26 @@
     
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   </head>
+
+  <style>
+    @keyframes fade {
+      from {background-color: white;}
+      to {background-color: #0000000;}
+    }
+
+    #fade {
+      pointer-events:none;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      z-index: 100;
+
+      animation: fade 3s forwards;
+    }
+  </style>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    
+    <div id="fade"></div>
     <div id="app"></div>
     <script src="/src/index.tsx" type="module"></script>
   </body>

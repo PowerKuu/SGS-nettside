@@ -1,14 +1,12 @@
-import Seperator from "../components/seperator/seperator"
+import Seperator from "../../components/seperator/seperator"
 
-import home from "../styles/home.module.css"
-
-import Header from "../elements/header/header"
-import Solutions from "../elements/solutions/solutions"
-import Whyus from "../elements/aboutus/aboutus"
-import Contact from "../elements/contact/contact"
+import home from "./home.module.css"
+import Header from "./header/header"
+import Solutions from "./solutions/solutions"
+import AboutUs from "./aboutus/aboutus"
+import Contact from "./contact/contact"
 
 export default () => {
-    console.log("hello")
     return <div class={home.content}>
         <Header></Header>
 
@@ -21,7 +19,7 @@ export default () => {
 
             <Seperator></Seperator>
 
-            <Whyus></Whyus>
+            <AboutUs></AboutUs>
 
             <Seperator></Seperator>
 

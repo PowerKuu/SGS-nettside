@@ -35,8 +35,18 @@
 
 .contact .left > form .button {
     display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
+.contact .left > form .button input {
+    width: auto;
+    border: 0;
+}
+
+.contact .left > form .button p {
+    color: var(--pop-color);
+}
 
 .contact .left > form .message {
     min-height: 10rem;
