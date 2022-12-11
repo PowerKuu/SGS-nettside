@@ -18,7 +18,7 @@
     --h3-span-color: #8C8C8C;
 
     --content-padding: 11vw;
-    --content-padding-top: calc(6vw + );
+    --content-padding-top: calc(6vw + 6rem);
     --row-gap: 4rem;
 }
 
