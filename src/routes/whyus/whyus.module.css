@@ -4,6 +4,11 @@
     padding-bottom: 4rem;
 }
 
+.showcase {
+    display: flex;
+    
+}
+
 @media screen and (max-width: 1700px) {
     .content {
         padding-bottom: 6rem;

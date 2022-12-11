@@ -88,16 +88,15 @@ function initThree(style:string) {
         
     })
     renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(0, 0)
 
 
     //controls = new OrbitControls(camera, renderer.domElement)
-    camera.position.set(0, 7, 25)
+    camera.position.set(0, 4, 15)
     camera.rotation.set(0,0,0)
     //controls.update()
     
-    renderer.domElement.style.position = "absolute"
-    renderer.domElement.style.zIndex = "-1"
+
     renderer.domElement.setAttribute("style", style)
 
 
@@ -123,9 +122,7 @@ function initCannon() {
 }
 
 function onWindowResize () {
-    camera.aspect = window.innerWidth / window.innerHeight
-    camera.updateProjectionMatrix()
-    renderer.setSize(window.innerWidth, window.innerHeight)
+
 }
 
 function numberBetween(min:number, max:number) {
@@ -146,6 +143,15 @@ export default function Simulation({style}:{style:string}) {
         physicsWorld.fixedStep()
         window.requestAnimationFrame(animate)
 
+        const width = window.innerWidth / 2.5
+        const height = 700
+
+        renderer.setSize(width, height)
+
+    
+        camera.aspect = (width / height)
+
+        camera.updateProjectionMatrix()
         //controls.update()
 
         for (var cube of cubes) {
@@ -175,7 +181,7 @@ export default function Simulation({style}:{style:string}) {
             return
         }
         index++
-        randomCube
+        randomCube()
     }, 5000)
 
     return (renderer as THREE.Renderer).domElement

@@ -8,7 +8,7 @@ export const FooterElement = ({onclick, children}:{onclick?:() => any, children:
     return <p class={styles.element} onclick={onclick}>{children}</p>
 }
 
-export default ({copywrite, children}:{copywrite:string, children:JSX.Element}) => {
+export default ({copywrite, pillars, children}:{copywrite:string, pillars:boolean, children:JSX.Element}) => {
     return <>
         <footer class={styles.footer}>
             <div>
@@ -16,11 +16,12 @@ export default ({copywrite, children}:{copywrite:string, children:JSX.Element}) 
             </div>
             <p>{copywrite}</p>
         </footer>
-
-        <div class={styles.pillars}>
-            <img class={styles.leftPillar} src={leftPillar} alt="" />
-            <img class={styles.rightPillar} src={rightPillar} alt="" />
-        </div>
+        {
+            pillars ? <div class={styles.pillars}>
+                <img class={styles.leftPillar} src={leftPillar} alt="" />
+                <img class={styles.rightPillar} src={rightPillar} alt="" />
+            </div> : ""
+        }
     </>
 
 }
