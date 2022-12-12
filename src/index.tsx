@@ -50,4 +50,10 @@ router.add("/whyus", async () => {
     </ContentWrapper>
 })
 
+router.add("/example", async () => {
+    const Simulation = await (await import("./routes/whyus/simulation/simulation")).default
+
+    return <Simulation style=""></Simulation>
+})
+
 router.update()

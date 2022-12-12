@@ -53,7 +53,7 @@ function createCube(position:CANNON.Vec3, radius:number, mass = 5){
     physicsWorld.addBody(cubeBody)
 
     const geometry = new THREE.BoxGeometry(radius*2, radius*2, radius*2)
-    const material = new THREE.MeshPhongMaterial({
+    const material = new THREE.MeshBasicMaterial({
         color: "#1066FF"
     })
     const mesh = new THREE.Mesh(geometry, material)
@@ -74,13 +74,13 @@ function initThree(style:string) {
     scene = new THREE.Scene()
     scene.background = null
 
-    const ambientLight = new THREE.AmbientLight( 0xaaaaaa )
-    const spotLight = new THREE.SpotLight(0xffffff, 0.8)
+    //const ambientLight = new THREE.AmbientLight( 0xaaaaaa )
+    //const spotLight = new THREE.SpotLight(0xffffff, 0.8)
     
-    spotLight.position.set(1, 25, 10)
+    //spotLight.position.set(1, 25, 10)
 
-    scene.add(ambientLight)
-    scene.add(spotLight)
+    //scene.add(ambientLight)
+    //scene.add(spotLight)
 
     renderer = new THREE.WebGLRenderer({ 
         alpha: true,
@@ -92,7 +92,7 @@ function initThree(style:string) {
 
 
     //controls = new OrbitControls(camera, renderer.domElement)
-    camera.position.set(0, 4, 15)
+    camera.position.set(0, 10, 200)
     camera.rotation.set(0,0,0)
     //controls.update()
     
@@ -122,7 +122,9 @@ function initCannon() {
 }
 
 function onWindowResize () {
-
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
 }
 
 function numberBetween(min:number, max:number) {
@@ -137,22 +139,13 @@ export default function Simulation({style}:{style:string}) {
     initThree(style)
     initCannon()
 
+    onWindowResize()
+
     const animate = () => {
         //cannonDebugger.update()
         renderer.render(scene, camera)
         physicsWorld.fixedStep()
         window.requestAnimationFrame(animate)
-
-        const width = window.innerWidth / 2.5
-        const height = 700
-
-        renderer.setSize(width, height)
-
-    
-        camera.aspect = (width / height)
-
-        camera.updateProjectionMatrix()
-        //controls.update()
 
         for (var cube of cubes) {
             syncBodyMesh(cube.body, cube.mesh)
@@ -165,8 +158,8 @@ export default function Simulation({style}:{style:string}) {
     window.addEventListener("resize", onWindowResize)
 
     const randomCube = () => {
-        const position = new CANNON.Vec3(numberBetween(-0.4, 0.4), 30, 0)
-        const radius = numberBetween(1, 1.25)
+        const position = new CANNON.Vec3(numberBetween(-20, 20), 30, 0)
+        const radius = numberBetween(1, 20)
         createCube(position, radius, 1)
     }
 
@@ -176,13 +169,13 @@ export default function Simulation({style}:{style:string}) {
     var index = 0
 
     const interval = setInterval(() => {
-        if (index == 20) {
+        if (index == 1000) {
             clearInterval(interval)
             return
         }
         index++
         randomCube()
-    }, 5000)
+    }, 2000)
 
     return (renderer as THREE.Renderer).domElement
 }

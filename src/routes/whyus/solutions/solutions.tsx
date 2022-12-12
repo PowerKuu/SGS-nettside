@@ -1,5 +1,7 @@
 import styles from "./solutuons.module.css"
 
+import webDevelopmentImage from "../../../assets/images/aboutus.png"
+
 import { JSX } from "solid-js/jsx-runtime"
 
 const SolutionContent = ({heading, icon, children}:{heading:string, icon:string, children:JSX.Element}) => {
@@ -21,14 +23,16 @@ const Solution = ({heading, image, children}:{heading:JSX.Element, image:string,
             <div>
                 {children}
             </div>
-            <img src={image} alt="" />
+            <div class={styles.image} style={{"background-image": `url(${image})`}}>
+                Hello
+            </div>
         </div>
     </div>
 }
 
 export default () => {
     return <>
-        <Solution heading={<><span>Web</span> utvikling</>} image="">
+        <Solution heading={<><span>Web</span> utvikling</>} image={webDevelopmentImage}>
             <SolutionContent heading="Nettside" icon="">
             Consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.
             </SolutionContent>
