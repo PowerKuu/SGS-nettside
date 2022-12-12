@@ -1,7 +1,7 @@
 .content {
     padding: var(--content-padding);
     padding-top: var(--content-padding-top);
-    padding-bottom: 4rem;
+    padding-bottom: var(--content-padding-bottom);
 }
 
 @media screen and (max-width: 1700px) {

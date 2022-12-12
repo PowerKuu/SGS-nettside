@@ -151,12 +151,12 @@ export default () => {
           <h3>Ta kontakt</h3>
           <div>
             <img src={phoneIcon} alt="" />
-            <p>+450505505</p>
+            <a href="tel:+4791331705">+4791331705</a>
           </div>
 
           <div>
             <img src={mailIcon} alt="" />
-            <p>post@sgs.marketing</p>
+            <a href="mailto:post@sgs.marketing">post@sgs.marketing</a>
           </div>
         </div>
       </div>

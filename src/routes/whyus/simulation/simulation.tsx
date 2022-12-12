@@ -19,6 +19,9 @@ let physicsWorld:CANNON.World
 //let cannonDebugger:{update: () => void}
 let groundBody:CANNON.Body
 
+let currentWidth:number = 1
+let currentHeight:number = 1
+
 //let controls:OrbitControls
 
 function syncBodyMesh(body:CANNON.Body, mesh:THREE.Mesh) {
@@ -53,7 +56,7 @@ function createCube(position:CANNON.Vec3, radius:number, mass = 5){
     physicsWorld.addBody(cubeBody)
 
     const geometry = new THREE.BoxGeometry(radius*2, radius*2, radius*2)
-    const material = new THREE.MeshBasicMaterial({
+    const material = new THREE.MeshLambertMaterial({
         color: "#1066FF"
     })
     const mesh = new THREE.Mesh(geometry, material)
@@ -68,19 +71,19 @@ function createCube(position:CANNON.Vec3, radius:number, mass = 5){
     })
 }
 
-function initThree(style:string) {
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 5, 2000)
+function initThree(cssClass:string) {
+    camera = new THREE.PerspectiveCamera(50, currentWidth / currentHeight, 5, 2000)
 
     scene = new THREE.Scene()
     scene.background = null
 
-    //const ambientLight = new THREE.AmbientLight( 0xaaaaaa )
-    //const spotLight = new THREE.SpotLight(0xffffff, 0.8)
+    const ambientLight = new THREE.AmbientLight( 0xaaaaaa )
+    const spotLight = new THREE.SpotLight(0xffffff, 0.8)
     
-    //spotLight.position.set(1, 25, 10)
+    spotLight.position.set(1, 25, 10)
 
-    //scene.add(ambientLight)
-    //scene.add(spotLight)
+    scene.add(ambientLight)
+    scene.add(spotLight)
 
     renderer = new THREE.WebGLRenderer({ 
         alpha: true,
@@ -92,12 +95,15 @@ function initThree(style:string) {
 
 
     //controls = new OrbitControls(camera, renderer.domElement)
-    camera.position.set(0, 10, 200)
+    camera.position.set(-(window.innerWidth / 280), 8, 25)
+    window.addEventListener("resize", () => {
+        camera.position.set(-(window.innerWidth / 280), 8, 25)
+    })
     camera.rotation.set(0,0,0)
     //controls.update()
     
 
-    renderer.domElement.setAttribute("style", style)
+    renderer.domElement.classList.add(cssClass)
 
 
     return renderer.domElement
@@ -120,26 +126,25 @@ function initCannon() {
 
     physicsWorld.addBody(groundBody)  
 }
-
-function onWindowResize () {
-    renderer.setSize(window.innerWidth, window.innerHeight)
-    camera.aspect = window.innerWidth / window.innerHeight
-    camera.updateProjectionMatrix()
-}
-
 function numberBetween(min:number, max:number) {
    const random = Math.random() * (max - min) + min
 
    return random
 }
 
-export default function Simulation({style}:{style:string}) {
-    if (renderer) {return renderer.domElement}
-    
-    initThree(style)
-    initCannon()
+export function setSize(width:number, height:number) {
+    currentWidth = width
+    currentHeight = height
 
-    onWindowResize()
+    renderer.setSize(currentWidth, currentHeight)
+    camera.aspect = currentWidth / currentHeight
+    camera.updateProjectionMatrix()
+}
+
+export default function Simulation({cssClass}:{cssClass:string}) {
+    if (renderer) {return renderer.domElement}
+    initThree(cssClass)
+    initCannon()
 
     const animate = () => {
         //cannonDebugger.update()
@@ -154,13 +159,10 @@ export default function Simulation({style}:{style:string}) {
 
     animate()
 
-    //document.body.style.touchAction = "none"
-    window.addEventListener("resize", onWindowResize)
-
     const randomCube = () => {
-        const position = new CANNON.Vec3(numberBetween(-20, 20), 30, 0)
-        const radius = numberBetween(1, 20)
-        createCube(position, radius, 1)
+        const position = new CANNON.Vec3(numberBetween(-0.1, 0.1), 30, 0)
+        const radius = numberBetween(1, 1)
+        createCube(position, radius, 5)
     }
 
     createCube(new CANNON.Vec3(0, 1, 0), 1, 2)
@@ -169,13 +171,13 @@ export default function Simulation({style}:{style:string}) {
     var index = 0
 
     const interval = setInterval(() => {
-        if (index == 1000) {
+        if (index == 10) {
             clearInterval(interval)
             return
         }
         index++
         randomCube()
-    }, 2000)
+    }, 5000)
 
     return (renderer as THREE.Renderer).domElement
 }

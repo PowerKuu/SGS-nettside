@@ -34,13 +34,13 @@
     width: 6rem;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
     .navbar .icon {
         width: 5rem;
     }
 }
 
-@media screen and (max-width: 330px) {  
+@media screen and (max-width: 380px) {  
     .navbar .iconContainer {
         display: none;
     }

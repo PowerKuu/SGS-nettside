@@ -1,7 +1,8 @@
 import styles from "./solutions.module.css"
-import { ActionButton, ReadButton } from "../../../components/buttons/buttons"
+import { ReadButton } from "../../../components/buttons/buttons"
 
 import Solution from "../solution/solution"
+import { whyusNav } from "../../../navigator"
 
 export default () => {
     return <div class={styles.solutions}>
@@ -18,12 +19,12 @@ export default () => {
 
             <Solution heading="Web design"subheading="kreativt">
                 <p>Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>                
-                <ReadButton style="margin-top: 1rem;">Lær mer</ReadButton>
+                <ReadButton style="margin-top: 1rem;" onclick={whyusNav}>Lær mer</ReadButton>
             </Solution>
 
             <Solution heading="Analyse" subheading="objektivt">
                 <p>Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora.</p>                
-                <ReadButton style="margin-top: 1rem;">Lær mer</ReadButton>
+                <ReadButton style="margin-top: 1rem;" onclick={whyusNav}>Lær mer</ReadButton>
             </Solution> 
         </div>
     </div>

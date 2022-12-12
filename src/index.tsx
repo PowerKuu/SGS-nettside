@@ -9,7 +9,7 @@ import "./index.css"
 import Navbar, {NavItem} from "./components/navbar/navbar"
 import Footer, { FooterElement } from "./components/footer/footer"
 
-import {whyusNav, contactNav} from "./navigator"
+import {whyusNav, contactNav, homeNav } from "./navigator"
 
 interface ContactWrapperProps {
     children: JSX.Element
@@ -17,10 +17,8 @@ interface ContactWrapperProps {
 }
 
 function ContentWrapper({children, isRouteHome}:ContactWrapperProps){
-    document.body.style.backgroundColor = "#00000000"
-
     return <>
-        <Navbar icon={sgsIcon}>
+        <Navbar icon={sgsIcon} iconOnClick={() => homeNav(isRouteHome)}>
             <NavItem onclick={whyusNav}>Hvorfor oss</NavItem>
             <NavItem button={true} onclick={() => contactNav(isRouteHome)}>Kontakt</NavItem>
         </Navbar>
@@ -29,6 +27,7 @@ function ContentWrapper({children, isRouteHome}:ContactWrapperProps){
     
         <Footer copywrite="© SGS, Inc. 2022. Storhet gjennom samerbeid." pillars={isRouteHome}>
             <FooterElement onclick={() => contactNav(isRouteHome)}>Kontakt</FooterElement>
+            <FooterElement onclick={() => homeNav(isRouteHome)}>Hjem</FooterElement>
             <FooterElement onclick={whyusNav}>Hvorfor oss</FooterElement>
         </Footer>
     </>
@@ -48,12 +47,6 @@ router.add("/whyus", async () => {
     return <ContentWrapper isRouteHome={false}>
         <WhyusComponent></WhyusComponent>
     </ContentWrapper>
-})
-
-router.add("/example", async () => {
-    const Simulation = await (await import("./routes/whyus/simulation/simulation")).default
-
-    return <Simulation style=""></Simulation>
 })
 
 router.update()

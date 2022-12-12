@@ -31,8 +31,13 @@
     max-width: 100%;
     min-height: 0rem;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: top;
+    background-size: contain;
 }
 
 @media screen and (max-width: 1200px) {

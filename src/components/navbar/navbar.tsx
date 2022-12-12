@@ -3,10 +3,10 @@ import styles from "./navbar.module.css"
 
 import { ReadButton } from "../buttons/buttons"
 
-export default ({icon, children}:{icon:any, children:JSX.Element}) => {
+export default ({icon, iconOnClick, children}:{icon:any, iconOnClick:() => any, children:JSX.Element}) => {
     return <nav class={styles.navbar}>
         <div class={styles.iconContainer}>
-            <img class={styles.icon} src={icon} alt="" />
+            <img onclick={iconOnClick} class={styles.icon} src={icon} alt="" />
         </div>
         <div>
             {children}

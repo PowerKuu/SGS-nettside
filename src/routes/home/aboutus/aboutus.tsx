@@ -2,6 +2,7 @@ import styles from "./aboutus.module.css"
 import {ReadButton} from "../../../components/buttons/buttons"
 
 import aboutusImage from "../../../assets/images/aboutus.png"
+import sgsVector from "../../../assets/vectors/sgs-logo.svg"
 
 import { whyusNav } from "../../../navigator"
 
@@ -15,7 +16,7 @@ export default () => {
                     <ReadButton onclick={whyusNav}>Hvorfor oss</ReadButton>
                 </div>
                 
-                <div style={{"background-image": `url(${aboutusImage})`}} class={styles.image}>
+                <div style={{"background-image": `url(${sgsVector})`}} class={styles.image}>
                 </div>
             </div>
     </div>
