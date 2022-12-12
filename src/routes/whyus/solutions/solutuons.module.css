@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    height: 100%;
     gap: 1rem;
 }
 
 .solution > div {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-
+    align-items: stretch;
     gap: 2rem;
 
     flex: 1;
@@ -22,7 +23,6 @@
     background-size: cover;
     
     width: 100%;
-    height: 100% !important;
 }
 
 
