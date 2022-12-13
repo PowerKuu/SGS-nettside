@@ -18,6 +18,8 @@ interface ContactWrapperProps {
 
 function ContentWrapper({children, isRouteHome}:ContactWrapperProps){
     return <>
+        <div class="fade" id="fade"></div>
+
         <Navbar icon={sgsIcon} iconOnClick={() => homeNav(isRouteHome)}>
             <NavItem onclick={whyusNav}>Hvorfor oss</NavItem>
             <NavItem button={true} onclick={() => contactNav(isRouteHome)}>Kontakt</NavItem>
