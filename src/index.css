@@ -84,7 +84,11 @@ h3 span {
 input, textarea {
     outline: none;
     border: none;
-    border: 1px solid var(--weak-color);
+    appearance: none;
+
+    border: 1px solid var(--weak-color) !important;
+    border-radius: 0 !important;
+
     padding: 0.5rem 0.7rem 0.5rem 0.7rem;
 
     font-size: 1rem;
