@@ -52,6 +52,10 @@ router.on("load", () => {
     }, 100)
 })
 
+router.on("404", () => {
+    router.update("404")
+})
+
 router.on("path", () => {
     const element = document.getElementById("fade")
     if (!element) return

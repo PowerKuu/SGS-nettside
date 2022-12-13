@@ -51,4 +51,10 @@ router.add("/whyus", async () => {
     </ContentWrapper>
 })
 
+router.add("/404", async () => {
+    const NotFoundPage = (await import("./routes/404/404")).default
+
+    return <NotFoundPage></NotFoundPage>
+})
+
 router.update()
