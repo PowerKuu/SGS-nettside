@@ -1,0 +1,153 @@
+.header {
+    display: flex;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.heading .buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.pillars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.pillars .relative {
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+.pillars .absolute {
+    flex: 1;
+    position: relative; 
+    width: 100%;
+}
+
+.pillars .fade {
+    width: 100%;
+    height: 12rem;
+    background: linear-gradient(360deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    bottom: 2rem;
+    z-index: 2;
+}
+
+
+
+.pillars .relative > *{
+    position: relative;
+}
+
+@keyframes leftSlide {
+    0% {
+        bottom: -20rem;
+    }
+    30% {
+        bottom: 0rem;
+    }
+}
+
+@keyframes middleSlide {
+    0% {
+        bottom: -30rem;
+    }
+    
+
+    10% {
+        bottom: -30rem;
+    }
+
+    40% {
+        bottom: 0rem;
+    }
+}
+
+
+@keyframes rightSlide {
+    0% {
+        bottom: -21rem;
+    }
+
+    20% {
+        bottom: -21rem;
+    }
+    
+    50% {
+        bottom: -5rem;
+    }
+
+    100% {
+        bottom: -5rem;
+    }
+}
+
+.pillars .relative .leftPillar {
+    display: flex;
+
+    filter: blur(1.5px);
+
+    animation: 7s leftSlide;
+
+    /* Remove pillar color */
+    margin-left: 1px;
+
+    width: 11rem;
+}   
+
+.pillars .relative .middlePillar {
+    animation: 5s middleSlide;
+    width: 14rem;
+}
+
+.pillars .relative .rightPillar {
+
+    filter: blur(1px);
+
+    animation: 5s rightSlide forwards;
+
+    /* Remove pillar color */
+    margin-right: 1px;
+    width: 8rem;
+}
+
+@media screen and (max-width: 1500px) {
+    .pillars .relative .rightPillar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1270px) {
+    .pillars .relative .leftPillar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .pillars .relative .middlePillar {
+        display: none;
+    }
+
+    .pillars {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .heading .buttons .read{
+        display: none;
+    }
+}
