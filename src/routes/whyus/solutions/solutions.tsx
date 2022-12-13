@@ -51,7 +51,7 @@ export default () => {
             Markedsføring på sosiale medier er en nøkkelkomponent i enhver digital markedsføringsstrategi, og SGS Marketing har ekspertisen og erfaringen til å hjelpe deg å få mest mulig ut av den. Vi kan hjelpe deg med å utvikle en markedsføringsplan for sosiale medier som er i tråd med forretningsmålene dine og retter seg mot den rette målgruppen.
             </SolutionContent>
 
-            <SolutionContent heading="Analytikere" icon={analyzeVector}>
+            <SolutionContent heading="Strategi" icon={analyzeVector}>
             Vi har ekspertisen og erfaringen til å hjelpe deg med å utvikle en markedsføringsstrategi som er skreddersydd for din virksomhet og dine mål. Våre eksperter jobber tett med deg for å forstå målgruppen din, konkurrentene dine og ditt unike verdiforslag. Vi vil deretter bruke denne informasjonen til å utvikle en omfattende markedsføring.
             </SolutionContent>
         </Solution>
