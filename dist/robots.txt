@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /whyus
+
+User-agent: *
+Allow: /

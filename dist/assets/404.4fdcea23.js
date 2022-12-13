@@ -1,1 +1,0 @@
-import{i as e,b as n,c as o,t as s,a as c,h as a,A as r}from"./index.4f4d5020.js";const l="_content_1k8c3_1",i={content:l},d=s("<div><h1><span>404</span> - Not found!</h1></div>"),f=()=>(()=>{const t=d.cloneNode(!0);return t.firstChild,e(t,n(r,{onclick:()=>a(!1),children:"Hjem"}),null),o(()=>c(t,i.content)),t})();export{f as default};

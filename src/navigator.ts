@@ -26,6 +26,7 @@ export const homeNav = (homePage:boolean) => {
 }
 
 export const contactNav = (homePage:boolean) => {
+    router.update("abc"); return
     if (!homePage) router.update("/", "?scroll=contact")
     scrollContact()
 }
@@ -53,7 +54,7 @@ router.on("load", () => {
 })
 
 router.on("404", () => {
-    router.update("404")
+    router.update("/error")
 })
 
 router.on("path", () => {
