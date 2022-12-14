@@ -1,10 +1,14 @@
 import { router } from "@klevn/solid-router" 
 import { JSX } from "solid-js/jsx-runtime"
 
+
+import "./index.css"
+import "../robots.txt"
+
+
 import { lazy } from "solid-js"
 
 import sgsIcon from "./assets/vectors/sgs-logo.svg"
-import "./index.css"
 
 import Navbar, {NavItem} from "./components/navbar/navbar"
 import Footer, { FooterElement } from "./components/footer/footer"
