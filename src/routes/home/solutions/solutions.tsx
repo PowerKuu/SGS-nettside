@@ -18,7 +18,7 @@ export default () => {
             </Solution>
 
             <Solution heading="Web design"subheading="kreativt">
-                <p class={styles.text}>Vi er stolte av å tilby webdesigntjenester av topp kvalitet for å hjelpe bedrifter med å skille seg ut på nettet. Vårt team av erfarne designere lager fantastiske, moderne nettsteder som er visuelt tiltalende og enkle å navigere.</p>                
+                <p class={styles.text}>Vi er stolte av å tilby webdesigntjenester av topp kvalitet for å hjelpe bedrifter med å skille seg ut på nettet. Vårt lag av erfarne designere lager fantastiske, moderne nettsteder som er visuelt tiltalende og enkle å navigere.</p>                
                 <ReadButton style="margin-top: 1rem;" onclick={whyusNav}>Lær mer</ReadButton>
             </Solution>
 
