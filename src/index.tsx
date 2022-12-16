@@ -28,9 +28,11 @@ function ContentWrapper({children, isRouteHome}:ContactWrapperProps){
             <NavItem onclick={whyusNav}>Hvorfor oss</NavItem>
             <NavItem button={true} onclick={() => contactNav(isRouteHome)}>Kontakt</NavItem>
         </Navbar>
+        
+        <article>
+            {children}
+        </article>
 
-        {children}
-    
         <Footer copywrite="© SGS, Inc. 2022. Storhet gjennom samerbeid." pillars={isRouteHome}>
             <FooterElement onclick={() => contactNav(isRouteHome)}>Kontakt</FooterElement>
             <FooterElement onclick={() => homeNav(isRouteHome)}>Hjem</FooterElement>
