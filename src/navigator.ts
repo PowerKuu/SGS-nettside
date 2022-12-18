@@ -30,8 +30,13 @@ export const contactNav = (homePage:boolean) => {
     scrollContact()
 }
 
+export const blogNav = () => {
+    
+}
+
 export const whyusNav = () => {
     router.update("/whyus")
+    scrollTop()
 }
 
 router.on("load", () => {

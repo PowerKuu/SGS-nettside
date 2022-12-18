@@ -9,7 +9,7 @@ import "./index.css"
 import Navbar, {NavItem} from "./components/navbar/navbar"
 import Footer, { FooterElement } from "./components/footer/footer"
 
-import {whyusNav, contactNav, homeNav } from "./navigator"
+import {whyusNav, contactNav, homeNav, blogNav } from "./navigator"
 
 interface ContactWrapperProps {
     children: JSX.Element
@@ -18,8 +18,27 @@ interface ContactWrapperProps {
 
 function ContentWrapper({children, isRouteHome}:ContactWrapperProps){
     return <>
-        <Navbar icon={sgsIcon} iconOnClick={() => homeNav(isRouteHome)}>
+        <Navbar icon={sgsIcon} iconOnClick={() => homeNav(isRouteHome)} dropdowns={[
+            {
+                text: "Hvorfor oss",
+                onclick: whyusNav
+            },
+            {
+                text: "Kontakt",
+                onclick: () => contactNav(isRouteHome)
+            },
+            {
+                text: "Blog",
+                onclick: () => blogNav()
+            },
+            {
+                text: "Hjem",
+                onclick: () => homeNav(isRouteHome)
+            }
+        ]}>
             <NavItem onclick={whyusNav}>Hvorfor oss</NavItem>
+            <NavItem onclick={() => homeNav(isRouteHome)}>Hjem</NavItem>
+            <NavItem onclick={() => blogNav()}>Blog</NavItem>
             <NavItem button={true} onclick={() => contactNav(isRouteHome)}>Kontakt</NavItem>
         </Navbar>
 
@@ -28,6 +47,7 @@ function ContentWrapper({children, isRouteHome}:ContactWrapperProps){
         <Footer copywrite="© SGS, Inc. 2022. Storhet gjennom samerbeid." pillars={isRouteHome}>
             <FooterElement onclick={() => contactNav(isRouteHome)}>Kontakt</FooterElement>
             <FooterElement onclick={() => homeNav(isRouteHome)}>Hjem</FooterElement>
+            <FooterElement onclick={() => blogNav()}>Blog</FooterElement>
             <FooterElement onclick={whyusNav}>Hvorfor oss</FooterElement>
         </Footer>
     </>

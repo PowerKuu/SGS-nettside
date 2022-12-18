@@ -21,6 +21,8 @@
     --content-padding-top: calc(6vw + 6rem);
     --content-padding-bottom: 4rem;
     --row-gap: 4rem;
+
+    --hamburger-height: 0.14rem;
 }
 
 html {

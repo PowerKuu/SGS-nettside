@@ -24,7 +24,6 @@ export default () => {
         })
     
         createEffect(() => {
-            console.log(simulationWrapper)
             observer.observe(simulationWrapper)
         }, [])
 
