@@ -11,42 +11,56 @@ import Footer, { FooterElement } from "./components/footer/footer"
 
 import {whyusNav, contactNav, homeNav, blogNav } from "./navigator"
 
+type RouteName = "home"|"whyus"|"blog"
+
 interface ContactWrapperProps {
     children: JSX.Element
-    isRouteHome: boolean
+    routeName: RouteName
 }
 
-function ContentWrapper({children, isRouteHome}:ContactWrapperProps){
+function ContentWrapper({children, routeName}:ContactWrapperProps){
+    const isRoutes = {
+        home: routeName == "home",
+        whyus: routeName == "whyus",
+        blog: routeName == "blog"
+    }
+
     return <>
-        <Navbar icon={sgsIcon} iconOnClick={() => homeNav(isRouteHome)} dropdowns={[
+        <div class="fade"></div>
+
+        <Navbar icon={sgsIcon} iconOnClick={() => homeNav(isRoutes.home)} dropdowns={[
             {
                 text: "Hvorfor oss",
-                onclick: whyusNav
+                onclick: whyusNav,
+                active: isRoutes.whyus
             },
             {
                 text: "Kontakt",
-                onclick: () => contactNav(isRouteHome)
+                onclick: () => contactNav(isRoutes.home),
+                active: false
             },
             {
                 text: "Blog",
-                onclick: () => blogNav()
+                onclick: () => blogNav(),
+                active: isRoutes.blog
             },
             {
                 text: "Hjem",
-                onclick: () => homeNav(isRouteHome)
+                onclick: () => homeNav(isRoutes.home),
+                active: isRoutes.home
             }
         ]}>
-            <NavItem onclick={whyusNav}>Hvorfor oss</NavItem>
-            <NavItem onclick={() => homeNav(isRouteHome)}>Hjem</NavItem>
-            <NavItem onclick={() => blogNav()}>Blog</NavItem>
-            <NavItem button={true} onclick={() => contactNav(isRouteHome)}>Kontakt</NavItem>
+            <NavItem active={isRoutes.whyus} onclick={whyusNav}>Hvorfor oss</NavItem>
+            <NavItem active={isRoutes.home} onclick={() => homeNav(isRoutes.home)}>Hjem</NavItem>
+            <NavItem active={isRoutes.blog} onclick={() => blogNav()}>Blog</NavItem>
+            <NavItem active={false} button={true} onclick={() => contactNav(isRoutes.home)}>Kontakt</NavItem>
         </Navbar>
 
         {children}
     
-        <Footer copywrite="© SGS, Inc. 2022. Storhet gjennom samerbeid." pillars={isRouteHome}>
-            <FooterElement onclick={() => contactNav(isRouteHome)}>Kontakt</FooterElement>
-            <FooterElement onclick={() => homeNav(isRouteHome)}>Hjem</FooterElement>
+        <Footer copywrite="© SGS, Inc. 2022. Storhet gjennom samerbeid." pillars={isRoutes.home}>
+            <FooterElement onclick={() => contactNav(isRoutes.home)}>Kontakt</FooterElement>
+            <FooterElement onclick={() => homeNav(isRoutes.home)}>Hjem</FooterElement>
             <FooterElement onclick={() => blogNav()}>Blog</FooterElement>
             <FooterElement onclick={whyusNav}>Hvorfor oss</FooterElement>
         </Footer>
@@ -58,14 +72,20 @@ const HomeComponent =  lazy(() => import("./routes/home/home"))
 const WhyusComponent =  lazy(() => import("./routes/whyus/whyus"))
 
 router.add("/", async () => {
-    return <ContentWrapper isRouteHome={true}>
+    return <ContentWrapper routeName="home">
         <HomeComponent></HomeComponent>
     </ContentWrapper>
 })
 
 router.add("/whyus", async () => {
-    return <ContentWrapper isRouteHome={false}>
+    return <ContentWrapper routeName="whyus">
         <WhyusComponent></WhyusComponent>
+    </ContentWrapper>
+})
+
+router.add("/blog", async () => {
+    return <ContentWrapper routeName="blog">
+
     </ContentWrapper>
 })
 

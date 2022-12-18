@@ -18,6 +18,10 @@
     padding-right: var(--content-padding);
 }
 
+.active {
+    text-decoration: underline;
+}
+
 .navbar .menuList {
     gap: 1rem;
     display: flex;
@@ -66,15 +70,19 @@
     padding-top: calc(var(--content-padding-top) / 1.2);
     
     z-index: -1;
+
+    pointer-events: none;
 }
 
 .menuToggle.open + .dropdown {
     opacity: 1;
+    pointer-events: all;
 }
 
 .dropdownItem {
     font-size: 2rem;
 }
+
 
 .dropdownItem:hover {
     text-decoration: underline;

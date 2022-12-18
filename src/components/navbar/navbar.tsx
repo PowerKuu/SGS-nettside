@@ -6,7 +6,8 @@ import { createSignal } from "solid-js"
 
 interface Dropdown {
     text: string,
-    onclick: () => any
+    onclick: () => any,
+    active: boolean
 }
 
 export default ({icon, iconOnClick, dropdowns, children}:{icon:any, iconOnClick:() => any, dropdowns:Dropdown[], children:JSX.Element}) => {
@@ -47,7 +48,7 @@ export default ({icon, iconOnClick, dropdowns, children}:{icon:any, iconOnClick:
                 return <p onclick={() => {
                     toggleHamburger()
                     dropdown.onclick()
-                }} class={styles.dropdownItem} style={{
+                }} class={[styles.dropdownItem, dropdown.active ? styles.active : ""].join(" ")} style={{
                     "transition-delay": (index * 0.05) + "s"
                 }}>{dropdown.text}</p>
             })}
@@ -55,7 +56,9 @@ export default ({icon, iconOnClick, dropdowns, children}:{icon:any, iconOnClick:
     </nav>
 }
 
-export const NavItem = ({button, onclick, children}:{button?:boolean, onclick?:() => any, children:JSX.Element}) => {
+export const NavItem = ({button, active, onclick, children}:{button?:boolean, active:boolean, onclick?:() => any, children:JSX.Element}) => {
     const childrernWrapped = button ? <ReadButton>{children}</ReadButton> : children
-    return <p onclick={onclick} class={styles.item}>{childrernWrapped}</p>
+    return <p onclick={onclick} class={[active ? styles.active : ""].join(" ")}>
+        {childrernWrapped}
+    </p>
 }

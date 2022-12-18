@@ -18,11 +18,11 @@ export const scrollTop = () => {
 
 export const homeNav = (homePage:boolean) => {
     if (homePage) {
-        scrollTop()
         router.update("/", "", false)
     } else {
         router.update("/", "", true)
     }
+    scrollTop()
 }
 
 export const contactNav = (homePage:boolean) => {
@@ -31,7 +31,7 @@ export const contactNav = (homePage:boolean) => {
 }
 
 export const blogNav = () => {
-    
+    router.update("/blog")
 }
 
 export const whyusNav = () => {
