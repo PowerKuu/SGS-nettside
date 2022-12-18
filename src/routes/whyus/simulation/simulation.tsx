@@ -57,7 +57,7 @@ function createCube(position:CANNON.Vec3, radius:number, mass = 5){
 
     const geometry = new THREE.BoxGeometry(radius*2, radius*2, radius*2)
     const material = new THREE.MeshLambertMaterial({
-        color: "#1066FF"
+        color: "#337aff"
     })
     const mesh = new THREE.Mesh(geometry, material)
 
@@ -171,7 +171,7 @@ export default function Simulation({cssClass}:{cssClass:string}) {
     var index = 0
 
     const interval = setInterval(() => {
-        if (index == 10) {
+        if (index >= 5) {
             clearInterval(interval)
             return
         }

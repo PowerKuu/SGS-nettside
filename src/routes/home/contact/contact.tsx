@@ -150,12 +150,12 @@ export default () => {
         <div class={styles.contacts}>
           <h3>Ta kontakt</h3>
           <div>
-            <img src={phoneIcon} alt="" />
+            <img src={phoneIcon} alt="Mobil icon for SGS markedsføring." />
             <a href="tel:+4791331705">+4791331705</a>
           </div>
 
           <div>
-            <img src={mailIcon} alt="" />
+            <img src={mailIcon} alt="Mail icon for SGS markedsføring." />
             <a href="mailto:post@sgs.marketing">post@sgs.marketing</a>
           </div>
         </div>

@@ -123,14 +123,14 @@
     width: 8rem;
 }
 
-@media screen and (max-width: 1400px) {
-    .pillars .relative .leftPillar {
+@media screen and (max-width: 1500px) {
+    .pillars .relative .rightPillar {
         display: none;
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .pillars .relative .rightPillar {
+@media screen and (max-width: 1270px) {
+    .pillars .relative .leftPillar {
         display: none;
     }
 }

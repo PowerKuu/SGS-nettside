@@ -57,6 +57,11 @@ router.on("load", () => {
     }, 100)
 })
 
+router.on("path", () => {
+    const element = document.getElementById("fade")
+    if (!element) return
+})
+
 
 function ref() {
     window.eval(`

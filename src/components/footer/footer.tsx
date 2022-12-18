@@ -18,8 +18,8 @@ export default ({copywrite, pillars, children}:{copywrite:string, pillars:boolea
         </footer>
         {
             pillars ? <div class={styles.pillars}>
-                <img class={styles.leftPillar} src={leftPillar} alt="" />
-                <img class={styles.rightPillar} src={rightPillar} alt="" />
+                <img class={styles.leftPillar} src={leftPillar} alt="Markedsføring pillar design." />
+                <img class={styles.rightPillar} src={rightPillar} alt="Markedsføring pillar design." />
             </div> : ""
         }
     </>

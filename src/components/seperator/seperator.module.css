@@ -5,4 +5,7 @@
     width: 100%;
 
     background-color: var(--seperator-color);
+
+
+    z-index: -2;
 }

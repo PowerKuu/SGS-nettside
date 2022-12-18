@@ -24,7 +24,7 @@ export default ({icon, iconOnClick, dropdowns, children}:{icon:any, iconOnClick:
 
     return <nav class={styles.navbar}>
         <div class={styles.iconContainer}>
-            <img onclick={iconOnClick} class={styles.icon} src={icon} alt="" />
+            <img onclick={iconOnClick} class={styles.icon} src={icon} alt="SGS markedsføring ikon" />
         </div>
         <div class={styles.menuList}>
             {children}

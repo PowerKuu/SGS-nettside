@@ -28,21 +28,21 @@ export default () => {
                 <div class={styles.buttons}>    
                     <ActionButton class={styles.action} onclick={() => contactNav(true)}>
                         Ta kontakt
-                        <img src={arrowWhite} alt="" />
+                        <img src={arrowWhite} alt="Kontakt oss navigasjon" />
                     </ActionButton>
 
                     <ReadButton class={styles.read} onclick={() => whyusNav()}>
                         Hvorfor oss
-                        <img src={arrowPop} alt="" />
+                        <img src={arrowPop} alt="Hvorfor oss navigasjon" />
                     </ReadButton>
                 </div>
             </div>
         
             <div class={styles.pillars}>
                 <div class={styles.relative}>
-                    <img class={styles.leftPillar} src={leftPillar} alt="" />
-                    <img class={styles.middlePillar} src={middlePillar} alt="" />
-                    <img class={styles.rightPillar} src={rightPillar} alt="" />
+                    <img class={styles.leftPillar} src={leftPillar} alt="SGS norsk markedsøfring pillar left." />
+                    <img class={styles.middlePillar} src={middlePillar} alt="SGS norsk markedsøfring pillar middle." />
+                    <img class={styles.rightPillar} src={rightPillar} alt="SGS norsk markedsøfring pillar right." />
                 </div>
 
                 <div class={styles.absolute}> 
