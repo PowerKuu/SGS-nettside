@@ -1,6 +1,6 @@
 import styles from "./solutuons.module.css"
 
-import webDevelopmentImage from "../../../assets/images/aboutus.png"
+
 
 import websiteVector from "../../../assets/icons/website.svg"
 import brandingVector from "../../../assets/icons/branding.svg"
@@ -36,7 +36,7 @@ const Solution = ({heading, image, children}:{heading:JSX.Element, image:string,
 
 export default () => {
     return <div class={styles.solutions}>
-        <Solution heading={<><span>Web</span> utvikling</>} image={webDevelopmentImage}>
+        <Solution heading={<><span>Web</span> utvikling</>} image={""}>
             <SolutionContent heading="Nettside" icon={websiteVector}>
             Med vårt fokus på brukeropplevelse og søkemotoroptimalisering kan vi hjelpe nettstedet ditt med å tiltrekke og beholde besøkende, generere mer trafikk og øke salget på nett. Velg SGS Marketing for responsive og kreativ webutvikling.
             </SolutionContent>
@@ -46,7 +46,7 @@ export default () => {
             </SolutionContent>
         </Solution>
         
-        <Solution heading={<><span>Markeds</span>føring</>} image={webDevelopmentImage}>
+        <Solution heading={<><span>Markeds</span>føring</>} image={""}>
             <SolutionContent heading="Sosiale medier" icon={socialVector}>
             Markedsføring på sosiale medier er en nøkkelkomponent i enhver digital markedsføringsstrategi, og SGS Marketing har ekspertisen og erfaringen til å hjelpe deg å få mest mulig ut av den. Vi kan hjelpe deg med å utvikle en markedsføringsplan for sosiale medier som er i tråd med forretningsmålene dine og retter seg mot den rette målgruppen.
             </SolutionContent>

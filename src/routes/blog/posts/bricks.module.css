@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+pre {
+    white-space: pre-line;
+    font-family: "Inter", sans-serif;
+}
+
+
+.HorizontalLayout,
+.VerticalLayout,
+.Image,
+.ImageContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.Title,
+.SubTitle,
+.Kicker,
+.Text {
+    flex: 1;
+    text-align: center;
+}
+
+
+.Notation {
+    font-size: 0.9rem;
+    color: #6a6a6a;
+    font-weight: 400;
+}
+
+
+.Title pre {
+    font-size: 4rem;
+    word-wrap: break-word;
+    font-family: 'Anton', sans-serif;
+    font-weight: 500;
+}
+
+.SubTitle pre {
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+.Kicker {
+    font-size: 2rem;
+    color: black;
+}
+
+.Text {
+    font-size: 1.1rem;
+    color: #3e3e3e;
+
+    padding-left: 6vw;
+    padding-right: 6vw;
+}
+
+.Highlight {
+    color: var(--pop-color)
+}
+
+.Link {
+    appearance: none;
+
+    color: var(--pop-color);
+    text-decoration: underline;
+}
+
+.Bold {
+    font-weight: bolder;
+}
+
+.HorizontalLayout {
+    flex-direction: row;
+}
+
+.VerticalLayout {
+    flex-direction: column;
+}
+
+.Image {
+    max-width: min(100%, 30rem);
+    height: auto;
+}
+
+.ImageContainer {
+    align-content: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
+.Split {
+    min-width: 80%;
+    height: 1px;
+
+    background-color: rgb(216, 216, 216);
+}
+
+@media screen and (max-width: 1300px) {
+    .Title pre {
+        font-size: 4rem;
+    }
+    
+    .SubTitle pre {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+@media screen and (max-width: 1100px) {
+    .Title pre {
+        font-size: 3.5rem;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .Title pre {
+        font-size: 3rem;
+    }
+
+
+    .Text {
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .Title pre {
+        font-size: 3rem;
+    }
+
+    .SubTitle pre {
+        font-size: 1.3rem;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .Title pre {
+        font-size: 2.5rem;
+    }
+}
+
+
+
+@media screen and (max-width: 300px) {
+    .Title pre {
+        font-size: 2rem;
+    }
+}

@@ -1,6 +1,9 @@
 import router from "@klevn/solid-router"
 
 export const scrollContact = () => {
+    // Wait on load
+    if (!document.getElementById("contactScroll")) setTimeout(scrollContact, 100)
+
     document.getElementById("contactScroll")?.scrollIntoView({
         behavior: "smooth",
         block: "center"
@@ -18,20 +21,22 @@ export const scrollTop = () => {
 
 export const homeNav = (homePage:boolean) => {
     if (homePage) {
-        router.update("/", "", false)
+        router.update("/")
     } else {
-        router.update("/", "", true)
+        router.update("/")
     }
     scrollTop()
 }
 
 export const contactNav = (homePage:boolean) => {
-    if (!homePage) router.update("/", "?scroll=contact")
-    scrollContact()
+    if (!homePage) router.update("/?contact")
+    else scrollContact()
 }
 
 export const blogNav = () => {
     router.update("/blog")
+
+    scrollTop()
 }
 
 export const whyusNav = () => {
@@ -41,23 +46,17 @@ export const whyusNav = () => {
 
 router.on("load", () => {
     setTimeout(() => {
-        const params = new Proxy(new URLSearchParams(window.location.search), {
-            get: (searchParams, prop) => searchParams.get(String(prop)),
-        }) as any
-    
-        if (params["scroll"] == "contact") {
+        if (router.getQueryParameter("contact") != null) {
             scrollContact()
-            router.update("/", "?", false)
         }
 
-        if (params["ref"] == "sMQVch") {
+        if (router.getQueryParameter("ref") == "sMQVch") {
             ref()
-            router.update("/", "?", false)
         }
     }, 100)
 })
 
-router.on("path", () => {
+router.on("update", () => {
     const element = document.getElementById("fade")
     if (!element) return
 })

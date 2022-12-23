@@ -1,4 +1,4 @@
-import { router } from "@klevn/solid-router" 
+import router from "@klevn/solid-router" 
 import { JSX } from "solid-js/jsx-runtime"
 
 import { lazy } from "solid-js"
@@ -9,7 +9,8 @@ import "./index.css"
 import Navbar, {NavItem} from "./components/navbar/navbar"
 import Footer, { FooterElement } from "./components/footer/footer"
 
-import {whyusNav, contactNav, homeNav, blogNav } from "./navigator"
+import {whyusNav, contactNav, homeNav, blogNav, scrollContact } from "./navigator"
+
 
 type RouteName = "home"|"whyus"|"blog"
 
@@ -70,6 +71,7 @@ function ContentWrapper({children, routeName}:ContactWrapperProps){
 
 const HomeComponent =  lazy(() => import("./routes/home/home"))
 const WhyusComponent =  lazy(() => import("./routes/whyus/whyus"))
+const Blog =  lazy(() => import ("./routes/blog/blog"))
 
 router.add("/", async () => {
     return <ContentWrapper routeName="home">
@@ -85,7 +87,7 @@ router.add("/whyus", async () => {
 
 router.add("/blog", async () => {
     return <ContentWrapper routeName="blog">
-
+        <Blog></Blog>
     </ContentWrapper>
 })
 

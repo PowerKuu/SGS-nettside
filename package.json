@@ -16,10 +16,11 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "@klevn/solid-router": "^2.0.2",
+    "@klevn/solid-router": "^4.0.5",
     "cannon-es": "^0.20.0",
     "cannon-es-debugger": "^1.0.0",
     "solid-js": "^1.5.1",
+    "solid-markdown": "^1.2.0",
     "three": "^0.147.0",
     "typewriter-effect": "^2.19.0"
   }
