@@ -74,6 +74,7 @@ const WhyusComponent =  lazy(() => import("./routes/whyus/whyus"))
 const Blog =  lazy(() => import ("./routes/blog/blog"))
 
 router.add("/", async () => {
+    console.log("ehll")
     return <ContentWrapper routeName="home">
         <HomeComponent></HomeComponent>
     </ContentWrapper>
@@ -89,6 +90,6 @@ router.add("/blog", async () => {
     return <ContentWrapper routeName="blog">
         <Blog></Blog>
     </ContentWrapper>
-})
+})//
 
 router.update()
