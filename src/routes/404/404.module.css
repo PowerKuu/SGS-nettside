@@ -1,0 +1,10 @@
+.content {
+    padding: var(--content-padding);
+    padding-top: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 1.4rem;
+}

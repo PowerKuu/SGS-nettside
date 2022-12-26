@@ -61,7 +61,7 @@
     background:rgba(255,255,255,1);
 
     align-items: flex-start;
-    padding-left: var(--content-padding);
+    padding-left: 1.65rem;
 
     flex-direction: column;
 
@@ -204,6 +204,11 @@
 
     .dropdown {
         display: flex;
+    }
+
+    .navbar {
+        padding-left: 1.65rem;
+        padding-right: 1.65rem;
     }
 }   
 

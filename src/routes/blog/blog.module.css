@@ -1,7 +1,7 @@
 .content {
-    padding-left: 23vw;
-    padding-right: 23vw;
-    padding-top: calc(var(--content-padding-top) - 3rem);
+    padding-left: 17vw;
+    padding-right: 17vw;
+    padding-top: 6rem;
     padding-bottom: var(--content-padding-bottom);
 }
 

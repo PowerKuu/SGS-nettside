@@ -15,10 +15,8 @@ export default ({icon, iconOnClick, dropdowns, children}:{icon:any, iconOnClick:
 
     const toggleHamburger = () => {
         if (getOpenClass() == styles.open) {
-            document.documentElement.style.overflow = "auto"
             setOpenClass("")
         } else {
-            document.documentElement.style.overflow = "hidden"
             setOpenClass(styles.open)
         }
     }

@@ -1,5 +1,5 @@
 {
-  "name": "vite-template-solid",
+  "name": "SGS-nettside",
   "version": "0.0.0",
   "description": "",
   "scripts": {
@@ -16,7 +16,7 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
-    "@klevn/solid-router": "^4.0.5",
+    "@klevn/solid-router": "^9.0.5",
     "cannon-es": "^0.20.0",
     "cannon-es-debugger": "^1.0.0",
     "solid-js": "^1.5.1",

@@ -1,7 +1,5 @@
-import router from "@klevn/solid-router" 
+import router, { lazyLoad } from "@klevn/solid-router" 
 import { JSX } from "solid-js/jsx-runtime"
-
-import { lazy } from "solid-js"
 
 import sgsIcon from "./assets/vectors/sgs-logo.svg"
 import "./index.css"
@@ -69,27 +67,38 @@ function ContentWrapper({children, routeName}:ContactWrapperProps){
 }
 
 
-const HomeComponent =  lazy(() => import("./routes/home/home"))
-const WhyusComponent =  lazy(() => import("./routes/whyus/whyus"))
-const Blog =  lazy(() => import ("./routes/blog/blog"))
+const routeHome =  lazyLoad(async () => (await import("./routes/home/home")).default)
+const routeWhyus =  lazyLoad(async () => (await import("./routes/whyus/whyus")).default)
+const routeBlog =  lazyLoad(async () => (await import ("./routes/blog/blog")).default)
 
 router.add("/", async () => {
-    console.log("ehll")
+    const RouteHome = await routeHome()
+
     return <ContentWrapper routeName="home">
-        <HomeComponent></HomeComponent>
+        <RouteHome></RouteHome>
     </ContentWrapper>
 })
 
-router.add("/whyus", async () => {
+router.add("/whyus", async () => {  
+    const RouteWhyus = await routeWhyus()
+
     return <ContentWrapper routeName="whyus">
-        <WhyusComponent></WhyusComponent>
+        <RouteWhyus></RouteWhyus>
     </ContentWrapper>
 })
 
-router.add("/blog", async () => {
+router.add("/blog", async () => {   
+    const RouteBlog = await routeBlog()
+
     return <ContentWrapper routeName="blog">
-        <Blog></Blog>
+        <RouteBlog></RouteBlog>
     </ContentWrapper>
-})//
+})
+
+router.add("404", async () => {
+    const Route404 = (await import("./routes/404/404")).default
+    
+    return <Route404></Route404>
+})
 
 router.update()
