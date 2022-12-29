@@ -9,6 +9,8 @@ import Footer, { FooterElement } from "./components/footer/footer"
 
 import {whyusNav, contactNav, homeNav, blogNav, scrollContact } from "./navigator"
 
+import { posts } from "./routes/blog/posts/posts"
+import Post from "./routes/blog/post/post"
 
 type RouteName = "home"|"whyus"|"blog"
 
@@ -94,6 +96,21 @@ router.add("/blog", async () => {
         <RouteBlog></RouteBlog>
     </ContentWrapper>
 })
+
+for (var post of posts){
+    const route = `/blog/${post.title.split(" ").join("_").toLowerCase()}`
+
+    router.add(route, () => {
+        return <ContentWrapper routeName="blog">
+            <Post {...post}></Post>
+        </ContentWrapper>
+    })
+}
+
+
+
+
+
 
 router.add("404", async () => {
     const Route404 = (await import("./routes/404/404")).default

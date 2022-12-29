@@ -6,7 +6,9 @@ type ValueOf<T> = T extends any[] ? T[number] : T[keyof T]
 type Props = ValueOf<Posts>
 
 export default ({title, description, blog}:Props) => {
-    return <div style={styles.markdown} id={btoa(title)}>
-        {blog}
+    return <div class={styles.content}>
+        <div style={styles.blog} id={btoa(title)}>
+            {blog}
+        </div>
     </div>
 }

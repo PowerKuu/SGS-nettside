@@ -6,8 +6,9 @@ import { createSignal } from "solid-js"
 
 interface Dropdown {
     text: string,
-    onclick: () => any,
-    active: boolean
+    active: boolean,
+
+    onclick: () => any
 }
 
 export default ({icon, iconOnClick, dropdowns, children}:{icon:any, iconOnClick:() => any, dropdowns:Dropdown[], children:JSX.Element}) => {
