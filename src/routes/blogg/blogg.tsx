@@ -1,4 +1,4 @@
-import styles from "./blog.module.css"
+import styles from "./blogg.module.css"
 import Post from "./post/post"
 import { posts } from "./posts/posts"
 

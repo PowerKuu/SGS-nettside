@@ -7,12 +7,12 @@ import "./index.css"
 import Navbar, {NavItem} from "./components/navbar/navbar"
 import Footer, { FooterElement } from "./components/footer/footer"
 
-import {whyusNav, contactNav, homeNav, blogNav, scrollContact } from "./navigator"
+import {whyusNav, contactNav, homeNav, bloggNav, scrollContact } from "./navigator"
 
-import { posts } from "./routes/blog/posts/posts"
-import Post from "./routes/blog/post/post"
+import { posts } from "./routes/blogg/posts/posts"
+import Post from "./routes/blogg/post/post"
 
-type RouteName = "home"|"whyus"|"blog"
+type RouteName = "home"|"whyus"|"blogg"
 
 interface ContactWrapperProps {
     children: JSX.Element
@@ -23,7 +23,7 @@ function ContentWrapper({children, routeName}:ContactWrapperProps){
     const isRoutes = {
         home: routeName == "home",
         whyus: routeName == "whyus",
-        blog: routeName == "blog"
+        blogg: routeName == "blogg"
     }
 
     return <>
@@ -41,9 +41,9 @@ function ContentWrapper({children, routeName}:ContactWrapperProps){
                 active: false
             },
             {
-                text: "Blog",
-                onclick: () => blogNav(),
-                active: isRoutes.blog
+                text: "Blogg",
+                onclick: () => bloggNav(),
+                active: isRoutes.blogg
             },
             {
                 text: "Hjem",
@@ -53,7 +53,7 @@ function ContentWrapper({children, routeName}:ContactWrapperProps){
         ]}>
             <NavItem active={isRoutes.whyus} onclick={whyusNav}>Hvorfor oss</NavItem>
             <NavItem active={isRoutes.home} onclick={() => homeNav(isRoutes.home)}>Hjem</NavItem>
-            <NavItem active={isRoutes.blog} onclick={() => blogNav()}>Blog</NavItem>
+            <NavItem active={isRoutes.blogg} onclick={() => bloggNav()}>Blogg</NavItem>
             <NavItem active={false} button={true} onclick={() => contactNav(isRoutes.home)}>Kontakt</NavItem>
         </Navbar>
 
@@ -62,7 +62,7 @@ function ContentWrapper({children, routeName}:ContactWrapperProps){
         <Footer copywrite="© SGS, Inc. 2022. Storhet gjennom samerbeid." pillars={isRoutes.home}>
             <FooterElement onclick={() => contactNav(isRoutes.home)}>Kontakt</FooterElement>
             <FooterElement onclick={() => homeNav(isRoutes.home)}>Hjem</FooterElement>
-            <FooterElement onclick={() => blogNav()}>Blog</FooterElement>
+            <FooterElement onclick={() => bloggNav()}>Blogg</FooterElement>
             <FooterElement onclick={whyusNav}>Hvorfor oss</FooterElement>
         </Footer>
     </>
@@ -71,7 +71,7 @@ function ContentWrapper({children, routeName}:ContactWrapperProps){
 
 const routeHome =  lazyLoad(async () => (await import("./routes/home/home")).default)
 const routeWhyus =  lazyLoad(async () => (await import("./routes/whyus/whyus")).default)
-const routeBlog =  lazyLoad(async () => (await import ("./routes/blog/blog")).default)
+const routeBlogg =  lazyLoad(async () => (await import ("./routes/blogg/blogg")).default)
 
 router.add("/", async () => {
     const RouteHome = await routeHome()
@@ -89,19 +89,19 @@ router.add("/whyus", async () => {
     </ContentWrapper>
 })
 
-router.add("/blog", async () => {   
-    const RouteBlog = await routeBlog()
+router.add("/blogg", async () => {   
+    const RouteBlogg = await routeBlogg()
 
-    return <ContentWrapper routeName="blog">
-        <RouteBlog></RouteBlog>
+    return <ContentWrapper routeName="blogg">
+        <RouteBlogg></RouteBlogg>
     </ContentWrapper>
 })
 
 for (var post of posts){
-    const route = `/blog/${post.title.split(" ").join("_").toLowerCase()}`
+    const route = `/blogg/${post.title.split(" ").join("_").toLowerCase()}`
 
     router.add(route, () => {
-        return <ContentWrapper routeName="blog">
+        return <ContentWrapper routeName="blogg">
             <Post {...post}></Post>
         </ContentWrapper>
     })

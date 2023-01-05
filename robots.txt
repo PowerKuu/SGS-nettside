@@ -2,7 +2,7 @@ User-agent: *
 Allow: /whyus
 
 User-agent: *
-Allow: /blog
+Allow: /blogg
 
 User-agent: *
 Allow: /

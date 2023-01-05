@@ -116,7 +116,7 @@ function Post1() {
 export const posts =  [{
     title: "Hvordan bygge nettside",
     description: "123",
-    blog: <Post1></Post1>
+    blogg: <Post1></Post1>
 }]
 
 

@@ -33,8 +33,8 @@ export const contactNav = (homePage:boolean) => {
     else scrollContact()
 }
 
-export const blogNav = () => {
-    router.update("/blog")
+export const bloggNav = () => {
+    router.update("/blogg")
 
     scrollTop()
 }
