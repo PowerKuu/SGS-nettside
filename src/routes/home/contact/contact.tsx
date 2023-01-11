@@ -140,10 +140,10 @@ export default () => {
 
       <div class={styles.right}>
         <div>
-          <h3>Gi oss insikt</h3>
+          <h3>Gi oss innsikt</h3>
           <p>
             For at vi kan få prosessen til å bli mest mulig effektiv trenger vi
-            å vite noen essensiell faktorer og information som målgrupper,
+            å vite noen essensielle faktorer og informasjon som målgrupper,
             overordnet budskap, budsjett og evt tidligere kampanjer.
           </p>
         </div>

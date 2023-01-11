@@ -1,1 +1,0 @@
-import{i as e,b as n,c as o,t as s,a as c,h as a,A as i}from"./index.110c2852.js";const l="_content_3hvoi_1",r={content:l},h=s("<div><h1>404</h1><h3>Vi fant ikke siden :(</h3></div>"),_=()=>(()=>{const t=h.cloneNode(!0);return t.firstChild.nextSibling,e(t,n(i,{onclick:()=>a(!1),children:"Hjem"}),null),o(()=>c(t,r.content)),t})();export{_ as default};

@@ -4,6 +4,10 @@ import { posts } from "./posts/posts"
 
 export default () => {
     return <div class={styles.content}>
-       
+       {
+        () => posts.map((post) => {
+            return post.blogg
+        })
+       }
     </div>
 }
