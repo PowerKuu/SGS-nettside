@@ -10,7 +10,7 @@ export default () => {
 
         <div>
             <Solution heading="Web utvikling"subheading="responsivt">
-                <p class={styles.text}>Hos SGS marketing tilbyr vi omfattende webutviklingsløsninger for å hjelpe bedrifter med å etablere en sterk online tilstedeværelse. Vårt lag av erfarne designere og utviklere lager tilpassede nettsider som er skreddersydd for de spesifikke behovene og målene til hver enkelt kunde.</p>                
+                <p class={styles.text}>Hos SGS marketing tilbyr vi omfattende webutviklingsløsninger for å hjelpe bedrifter med å etablere en sterk online tilstedeværelse. Vårt lag av erfarne designere og utviklere lager tilpassede nettsider som er skreddersydd for de spesifikke behovene og målene til hver enkelte kunde.</p>                
             </Solution>
 
             <Solution heading="Markedsføring"subheading="effektivt">

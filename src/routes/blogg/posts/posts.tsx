@@ -15,7 +15,7 @@ function Post1() {
           Digital <Bricks.Highlight>Markedsføring</Bricks.Highlight>, fem gode tips.
         </Bricks.Title>
         <Bricks.SubTitle>
-          Kom et steg foran konkurrentene med disse fem gode tips.
+          Kom et steg foran konkurrentene med disse fem gode tipsene
         </Bricks.SubTitle>
       </Bricks.VerticalLayout>
 
